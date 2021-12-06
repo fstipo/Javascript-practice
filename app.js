@@ -1,3 +1,6 @@
 let userName = prompt('What is your name?');
 
-console.log('Welcome to my page ' + userName);
+let message = `Welcome
+to my site, ${userName}`;
+
+console.log(message);
