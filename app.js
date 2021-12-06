@@ -1,8 +1,3 @@
-let message = 'Hello World';
+let userName = prompt('What is your name?');
 
-if (message) {
-  message = 'No no no';
-  console.log(message);
-}
-
-console.log(message);
+console.log('Welcome to my page ' + userName);
