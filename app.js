@@ -1,10 +1,8 @@
-let message = 'Hello ';
+let message = 'Hello World';
 
-let userName = 'Franko';
-console.log(message + userName);
-message = 'Bye ';
+if (message) {
+  message = 'No no no';
+  console.log(message);
+}
 
-console.log(message + userName);
-userName = 'David';
-
-console.log(message + userName);
+console.log(message);
