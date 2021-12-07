@@ -1,6 +1,14 @@
-let userName = prompt('What is your name?');
+let temp;
+// String
+temp = 10;
+temp = String(10);
+temp = String([1, 2, 3, 4]);
+temp = (100).toString();
 
-let message = `Welcome
-to my site, ${userName}`;
+// Number
+temp = Number('50');
+temp = Number(true);
+temp = Number(false);
+temp = Number([1, 2, 3, 4]);
 
-console.log(message);
+console.log(temp);
