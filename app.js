@@ -1,60 +1,18 @@
-// let temp;
-// // String
-// temp = 10;
-// temp = String(10);
-// temp = String([1, 2, 3, 4]);
-// temp = (100).toString();
+// // Challenge #2
+// let miles = prompt('How many miles?');
+// miles = Number(miles);
+// const km = miles * 1.60934;
+// const message = `${miles} Miles is ${km} km`;
 
-// // Number
-// temp = Number('50');
-// temp = Number(true);
-// temp = Number(false);
-// temp = Number([1, 2, 3, 4]);
+// console.log(message);
 
-// // Type Coercion
-// temp = 10;
-// temp = temp + 5;
-// temp = temp + 'five';
-// console.log(temp);
+let num = 5;
 
-// 'Hello' + 'World';
-// '5' + 5;
-// 5 + '5';
-// 'Hello' - 'World';
-// '10' - 5;
+if (num) {
+  console.log('Number exists');
+}
 
-// typeof '10';
-// typeof 10;
-// typeof false;
-// typeof null;
-// typeof undefined;
-
-// temp = 5;
-// typeof temp;
-// a = String(temp);
-// typeof a;
-// let b = (100).toString();
-// console.log(b);
-// typeof b;
-
-// const c = '150';
-// const d = Number(c);
-
-// typeof c;
-// typeof d;
-
-// console.log(typeof c, typeof d);
-
-// let ab = '5';
-// let cd = '15';
-
-// console.log(ab + cd);
-// console.log(cd - ab);
-
-// Challenge #2
-let miles = prompt('How many miles?');
-miles = Number(miles);
-const km = miles * 1.60934;
-const message = `${miles} Miles is ${km} km`;
-
-console.log(message);
+num = 51;
+if (num > 50) {
+  console.log('Hello');
+}
