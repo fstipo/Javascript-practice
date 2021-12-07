@@ -6,13 +6,25 @@
 
 // console.log(message);
 
+// let num = 5;
+
+// if (num) {
+//   console.log('Number exists');
+// }
+
+// num = 51;
+// if (num > 50) {
+//   console.log('Hello');
+// }
+
+// if else
+
 let num = 5;
 
-if (num) {
-  console.log('Number exists');
-}
-
-num = 51;
 if (num > 50) {
-  console.log('Hello');
+  console.log('Num > 50');
+} else if (num == 50) {
+  console.log('Num = 50');
+} else {
+  console.log('Num < 50');
 }
