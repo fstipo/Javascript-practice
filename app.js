@@ -21,16 +21,31 @@
 
 // Logical Operators
 
-let age = prompt('Enter age');
-age = Number(age);
-let member = true;
-console.log(age);
+// let age = prompt('Enter age');
+// age = Number(age);
+// let member = true;
+// console.log(age);
 
-let checkAge = age >= 18 ? 'allow' : 'deny';
-console.log(checkAge);
+// let checkAge = age >= 18 ? 'allow' : 'deny';
+// console.log(checkAge);
 
-if (age >= 18 && member) {
-  console.log('Enter');
+// if (age >= 18 && member) {
+//   console.log('Enter');
+// } else {
+//   console.log('🛑');
+// }
+
+// Challenge #3
+
+let time = 24;
+console.log('time is ' + time);
+let output;
+
+if (time >= 4 && time <= 12) {
+  output = 'Good morning';
+} else if (time > 12 && time <= 18) {
+  output = 'Good afternoon';
 } else {
-  console.log('🛑');
+  output = 'Good night';
 }
+console.log(output);
