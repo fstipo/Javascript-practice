@@ -1,51 +1,33 @@
-// // if else
+// // Challenge #3
 
-// let num = 5;
+// let time = 24;
+// console.log('time is ' + time);
+// let output;
 
-// if (num > 50) {
-//   console.log('Num > 50');
-// } else if (num == 50) {
-//   console.log('Num = 50');
+// if (time >= 4 && time <= 12) {
+//   output = 'Good morning';
+// } else if (time > 12 && time <= 18) {
+//   output = 'Good afternoon';
 // } else {
-//   console.log('Num < 50');
+//   output = 'Good night';
 // }
+// console.log(output);
 
-// // Ternary operator
+// Switch
 
-// let num = 14;
-// num = Number(num);
-// console.log(num);
-// let message = num % 2 ? 'odd' : 'even';
+const person = 'Toto';
 
-// console.log(`${num} is ${message}`);
-
-// Logical Operators
-
-// let age = prompt('Enter age');
-// age = Number(age);
-// let member = true;
-// console.log(age);
-
-// let checkAge = age >= 18 ? 'allow' : 'deny';
-// console.log(checkAge);
-
-// if (age >= 18 && member) {
-//   console.log('Enter');
-// } else {
-//   console.log('🛑');
-// }
-
-// Challenge #3
-
-let time = 24;
-console.log('time is ' + time);
-let output;
-
-if (time >= 4 && time <= 12) {
-  output = 'Good morning';
-} else if (time > 12 && time <= 18) {
-  output = 'Good afternoon';
-} else {
-  output = 'Good night';
+switch (person) {
+  case 'Toto':
+    console.log(person + ' is not my friend');
+    break;
+  case 'Mara':
+  case 'Angela':
+    console.log(`Mara and Angela are here`);
+    break;
+  case 'Franko':
+    console.log(`${person} is our teacher`);
+    break;
+  default:
+    console.log('Hey Everybody');
 }
-console.log(output);
