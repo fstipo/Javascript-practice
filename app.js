@@ -14,21 +14,31 @@
 //   return num + 2;
 // }
 
+const btns = document.querySelectorAll('button');
+
+btns[0].onclick = message1;
+btns[1].onclick = message2;
+btns[2].onclick = message3;
+
 let count1 = 0;
 let count2 = 0;
 let count3 = 0;
 
-const message1 = () => {
+const message = () => {
+  console.log(count1, count2, count3);
+};
+
+function message1() {
   count1++;
-  console.log(count1, count2, count3);
-};
+  message();
+}
 
-const message2 = () => {
+function message2() {
   count2++;
-  console.log(count1, count2, count3);
-};
+  message();
+}
 
-const message3 = () => {
+function message3() {
   count3++;
-  console.log(count1, count2, count3);
-};
+  message();
+}
