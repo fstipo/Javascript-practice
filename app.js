@@ -1,33 +1,43 @@
-// // Challenge #3
+// // Switch
 
-// let time = 24;
-// console.log('time is ' + time);
-// let output;
+// const person = 'Toto';
 
-// if (time >= 4 && time <= 12) {
-//   output = 'Good morning';
-// } else if (time > 12 && time <= 18) {
-//   output = 'Good afternoon';
-// } else {
-//   output = 'Good night';
+// switch (person) {
+//   case 'Toto':
+//     console.log(person + ' is not my friend');
+//     break;
+//   case 'Mara':
+//   case 'Angela':
+//     console.log(`Mara and Angela are here`);
+//     break;
+//   case 'Franko':
+//     console.log(`${person} is our teacher`);
+//     break;
+//   default:
+//     console.log('Hey Everybody');
 // }
-// console.log(output);
 
-// Switch
+// Javascript functions
 
-const person = 'Toto';
+const message = 'Hello World';
+let num = 1;
 
-switch (person) {
-  case 'Toto':
-    console.log(person + ' is not my friend');
-    break;
-  case 'Mara':
-  case 'Angela':
-    console.log(`Mara and Angela are here`);
-    break;
-  case 'Franko':
-    console.log(`${person} is our teacher`);
-    break;
-  default:
-    console.log('Hey Everybody');
-}
+const counter = () => {
+  console.log(message);
+  console.log(`${num} times run`);
+  console.log('------------------------');
+  num++;
+};
+
+counter();
+counter();
+counter();
+
+const addNumberTen = (num) => {
+  console.log(num + 10);
+  console.log('------------------------');
+};
+
+addNumberTen(10);
+addNumberTen(50);
+addNumberTen(100);
