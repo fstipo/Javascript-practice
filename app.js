@@ -1,43 +1,60 @@
-// // Switch
+// // Javascript functions
 
-// const person = 'Toto';
+// const message = 'Hello World';
+// let num = 1;
 
-// switch (person) {
-//   case 'Toto':
-//     console.log(person + ' is not my friend');
-//     break;
-//   case 'Mara':
-//   case 'Angela':
-//     console.log(`Mara and Angela are here`);
-//     break;
-//   case 'Franko':
-//     console.log(`${person} is our teacher`);
-//     break;
-//   default:
-//     console.log('Hey Everybody');
-// }
+// const counter = () => {
+//   console.log(message);
+//   console.log(`${num} times run`);
+//   console.log('------------------------');
+//   num++;
+// };
 
-// Javascript functions
+// counter();
+// counter();
+// counter();
 
-const message = 'Hello World';
-let num = 1;
+// const addNumberTen = (num) => {
+//   console.log(num + 10);
+//   console.log('------------------------');
+// };
 
-const counter = () => {
-  console.log(message);
-  console.log(`${num} times run`);
-  console.log('------------------------');
-  num++;
+// addNumberTen(10);
+// addNumberTen(50);
+// addNumberTen(100);
+
+// Default values
+
+const defaultValues = (num1 = 1, num2 = 10) => {
+  console.log(num1, num2);
+};
+defaultValues();
+defaultValues(5);
+defaultValues(undefined, undefined);
+defaultValues(20, 40);
+
+console.log('---------------');
+
+const defaultValues2 = (num1, num2) => {
+  num1 = num1 || 15;
+  num2 = num2 || 50;
+  console.log(num1, num2);
 };
 
-counter();
-counter();
-counter();
+defaultValues2();
+defaultValues2(25, 10);
+defaultValues2(undefined, 10);
+defaultValues2(24, undefined);
 
-const addNumberTen = (num) => {
-  console.log(num + 10);
-  console.log('------------------------');
+console.log('---------------');
+
+const defaultValues3 = (num1, num2) => {
+  num1 = typeof num1 !== 'undefined' ? num1 : 580;
+  num2 = typeof num2 !== 'undefined' ? num2 : 880;
+  console.log(num1, num2);
 };
 
-addNumberTen(10);
-addNumberTen(50);
-addNumberTen(100);
+defaultValues3();
+defaultValues3(125, 100);
+defaultValues3(undefined, 105);
+defaultValues3(240, undefined);
