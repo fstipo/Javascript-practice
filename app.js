@@ -27,3 +27,15 @@ function add2(num) {
 }
 
 add1(2);
+
+// Function scope
+let a = 'Hello';
+let b;
+
+const test1 = () => {
+  b = 'World';
+  console.log(`${a} ${b}`);
+};
+
+test1();
+console.log(b);
