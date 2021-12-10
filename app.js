@@ -1,70 +1,70 @@
-// 'use strict'
+// 'use strict';
 
-/* Function recursion*/
+// // Logical Assignment operator (Jonas)
 
-// const loop = (x) => {
-//   if (x >= 100) return;
-//   console.log(x);
-//   loop(x + 3);
+// const rest1 = {
+//   name: 'Capri',
+//   numGuests: 20,
 // };
 
-// loop(0);
-
-// let secretNumber = 11;
-// let guess;
-
-// const guesser = () => {
-//   guess = Number(prompt('Guess the number'));
-//   console.log(guess);
-//   if (guess === secretNumber) {
-//     console.log('Number is correct');
-//     console.log('You win!!! 🏆');
-//     return;
-//   } else {
-//     let message = guess < secretNumber ? 'higher' : 'lower';
-//     console.log(`Wrong GO ${message}!`);
-//     guesser();
-//   }
+// const rest2 = {
+//   name: 'La Plaza',
+//   owner: 'John Doe',
 // };
 
-// guesser();
+// // OR assignment operator
 
-// IIFE
+// rest1.numGuests = rest1.numGuests || 10;
+// // Logical operator
+// rest1.numGuests || 10;
 
-//  ( function () {
-//     console.log('Welcome');
-//     console.log('--------------');
-//   }
-// )();)
+// rest2.numGuests = rest2.numGuests ||= 10;
+// // Logical operator
+// rest2.numGuests ||= 10;
 
-(function (firstName) {
-  console.log(`My name is ${firstName}`);
-  console.log('--------------');
-})('Franko');
+// console.log(rest1);
+// console.log(rest2);
 
-let result = (() => {
-  return 'Hello World!';
-})();
+// // Problem 0
 
-console.log(result);
+// const rest1 = {
+//   name: 'Capri',
+//   numGuests: 0,
+// };
 
-/Arrow functions/;
+// rest1.numGuests ??= 10;
 
-function test10(x) {
-  return x * 5;
-}
+// //??
 
-const test11 = (x) => x * 5;
+// // nullish operator (null or undefined)
+// const rest2 = {
+//   name: 'La Plaza',
+//   owner: 'John Doe',
+//   numGuests: 0,
+// };
 
-console.log(test10(2));
-console.log(test11(2));
+// rest1.numGuests ??= 10;
+// rest2.numGuests ??= 10;
 
-let add5 = (num) => num + 5;
+// console.log(rest1);
+// console.log(rest2);
 
-let add6 = (num) => {
-  let x = num + 6;
-  console.log(x);
+// And operator
+const rest1 = {
+  name: 'Capri',
+  numGuests: 20,
 };
 
-console.log(add5(10));
-add6(10);
+const rest2 = {
+  name: 'La Plaza',
+  owner: 'John Doe',
+};
+
+// rest2.owner = rest2.owner && 'ANONYMOUS';
+// rest1.owner = rest1.owner && 'ANONYMOUS';
+
+//&& And operator &&
+rest2.owner &&= 'ANONYMOUS';
+rest1.owner &&= 'ANONYMOUS';
+console.log(rest2);
+console.log(rest1);
