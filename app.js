@@ -1,3 +1,5 @@
+// 'use strict'
+
 /* Function recursion*/
 
 // const loop = (x) => {
@@ -29,10 +31,11 @@
 
 // IIFE
 
-(function () {
-  console.log('Welcome');
-  console.log('--------------');
-})();
+//  ( function () {
+//     console.log('Welcome');
+//     console.log('--------------');
+//   }
+// )();)
 
 (function (firstName) {
   console.log(`My name is ${firstName}`);
@@ -44,3 +47,24 @@ let result = (() => {
 })();
 
 console.log(result);
+
+/Arrow functions/;
+
+function test10(x) {
+  return x * 5;
+}
+
+const test11 = (x) => x * 5;
+
+console.log(test10(2));
+console.log(test11(2));
+
+let add5 = (num) => num + 5;
+
+let add6 = (num) => {
+  let x = num + 6;
+  console.log(x);
+};
+
+console.log(add5(10));
+add6(10);
