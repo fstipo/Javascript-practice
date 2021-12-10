@@ -93,3 +93,18 @@ arr.slice();
 console.log(arr);
 arr.splice(1, 2);
 console.log(arr);
+
+// REVERSE
+const arr2 = [1, 2, 3, 4, 5];
+arr2.reverse();
+console.log(arr2);
+
+// CONCAT
+const lettersAndNumbers = arr.concat(arr2);
+console.log(lettersAndNumbers);
+console.log([...arr, ...arr2]);
+
+// JOIN
+lettersAndNumbers.join('-');
+lettersAndNumbers.join('');
+lettersAndNumbers.join('.');
