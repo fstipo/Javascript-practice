@@ -87,3 +87,9 @@ arr.slice(1, -2);
 // shallow copy
 arr.slice();
 [...arr];
+
+// SPLICE
+// arr.splice(2);
+console.log(arr);
+arr.splice(1, 2);
+console.log(arr);
