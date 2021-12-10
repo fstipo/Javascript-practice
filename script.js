@@ -75,4 +75,15 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
-let arr = ['a', 'b', 'c', d, e];
+// SLICE
+let arr = ['a', 'b', 'c', 'd', 'e'];
+arr.slice(2);
+arr.slice(2, 4);
+arr.slice(2, 4).length;
+arr.slice(-2);
+arr.slice(-1);
+arr.slice(1, -2);
+
+// shallow copy
+arr.slice();
+[...arr];
