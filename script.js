@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -75,36 +75,18 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
-// SLICE
-let arr = ['a', 'b', 'c', 'd', 'e'];
-arr.slice(2);
-arr.slice(2, 4);
-arr.slice(2, 4).length;
-arr.slice(-2);
-arr.slice(-1);
-arr.slice(1, -2);
+// at method
+const arr = [24, 54, 162];
+console.log(arr[0]);
+console.log(arr[1]);
+console.log(arr.at(0));
+console.log(arr.at(1));
 
-// shallow copy
-arr.slice();
-[...arr];
+// getting last element of array
+console.log(arr[arr.length - 1]);
+console.log(arr.splice(-1)[0]);
+console.log(arr.at(-1));
 
-// SPLICE
-// arr.splice(2);
-console.log(arr);
-arr.splice(1, 2);
-console.log(arr);
-
-// REVERSE
-const arr2 = [1, 2, 3, 4, 5];
-arr2.reverse();
-console.log(arr2);
-
-// CONCAT
-const lettersAndNumbers = arr.concat(arr2);
-console.log(lettersAndNumbers);
-console.log([...arr, ...arr2]);
-
-// JOIN
-lettersAndNumbers.join('-');
-lettersAndNumbers.join('');
-lettersAndNumbers.join('.');
+// at works at the strings
+console.log('Hello'.at(0));
+console.log('Hello'.at(-1));
