@@ -49,22 +49,50 @@
 // console.log(rest1);
 // console.log(rest2);
 
-// And operator
-const rest1 = {
-  name: 'Capri',
-  numGuests: 20,
+// // And operator
+// const rest1 = {
+//   name: 'Capri',
+//   numGuests: 20,
+// };
+
+// const rest2 = {
+//   name: 'La Plaza',
+//   owner: 'John Doe',
+// };
+
+// // rest2.owner = rest2.owner && 'ANONYMOUS';
+// // rest1.owner = rest1.owner && 'ANONYMOUS';
+
+// //&& And operator &&
+// rest2.owner &&= 'ANONYMOUS';
+// rest1.owner &&= 'ANONYMOUS';
+// console.log(rest2);
+// console.log(rest1);
+
+// const loop = (x) => {
+//   console.log(x);
+//   if (x >= 200) return;
+//   loop(x + 4);
+// };
+
+// loop(0);
+
+const secretNumber = 34;
+let guess;
+let counter = 0;
+
+const guesser = () => {
+  guess = Number(prompt('Chose number: 1-100'));
+  console.log(guess);
+  counter++;
+  if (guess === secretNumber) {
+    console.log(`${guess} is correct.You win 🏆. Counter:${counter}
+    `);
+  } else {
+    const message = guess < secretNumber ? 'Try higher ⬆' : 'Try lower ⬇';
+    console.log(`Wrong! ${message}`);
+    guesser();
+  }
 };
 
-const rest2 = {
-  name: 'La Plaza',
-  owner: 'John Doe',
-};
-
-// rest2.owner = rest2.owner && 'ANONYMOUS';
-// rest1.owner = rest1.owner && 'ANONYMOUS';
-
-//&& And operator &&
-rest2.owner &&= 'ANONYMOUS';
-rest1.owner &&= 'ANONYMOUS';
-console.log(rest2);
-console.log(rest1);
+guesser();
