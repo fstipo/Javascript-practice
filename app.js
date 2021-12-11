@@ -77,22 +77,63 @@
 
 // loop(0);
 
-const secretNumber = 34;
-let guess;
-let counter = 0;
+// // Recursion
+// const secretNumber = 34;
+// let guess;
+// let counter = 0;
 
-const guesser = () => {
-  guess = Number(prompt('Chose number: 1-100'));
-  console.log(guess);
-  counter++;
-  if (guess === secretNumber) {
-    console.log(`${guess} is correct.You win 🏆. Counter:${counter}
-    `);
-  } else {
-    const message = guess < secretNumber ? 'Try higher ⬆' : 'Try lower ⬇';
-    console.log(`Wrong! ${message}`);
-    guesser();
-  }
+// const guesser = () => {
+//   guess = Number(prompt('Chose number: 1-100'));
+//   console.log(guess);
+//   counter++;
+//   if (guess === secretNumber) {
+//     console.log(`${guess} is correct.You win 🏆. Counter:${counter}
+//     `);
+//   } else {
+//     const message = guess < secretNumber ? 'Try higher ⬆' : 'Try lower ⬇';
+//     console.log(`Wrong! ${message}`);
+//     guesser();
+//   }
+// };
+
+// // guesser();
+
+// (function (x) {
+//   console.log(x * 15);
+// })(10);
+
+// let add5 = ((x) => x + 5)(105);
+
+// console.log(add5);
+
+// let add6 = ((x) => {
+//   let temp = x + 6;
+//   return temp;
+// })(12);
+
+// console.log(add6);
+// console.log(add6);
+
+// Logical assignmant operator
+
+const rest1 = {
+  name: 'La plaza',
+  numGuests: 0,
 };
 
-guesser();
+const rest2 = {
+  name: 'Luigi bar',
+  owner: 'Luigi',
+};
+
+// rest2.numGuests = rest2.numGuests || 15;
+rest2.numGuests ||= 25;
+// rest1.numGuests ||= 25;
+rest1.numGuests ??= 25;
+
+// rest2.owner = rest2.owner && 'ANONYMOUS';
+rest2.owner &&= 'ANONYMOUS';
+rest1.owner &&= 'ANONYMOUS';
+
+console.log(rest2);
+console.log(rest1);
