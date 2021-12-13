@@ -106,3 +106,24 @@ movements.forEach((movement, index, array) => {
     console.log(`Movement ${index + 1}: You deposited ${movement}`);
   else console.log(`Movement ${index + 1}: You withdrew ${Math.abs(movement)}`);
 });
+
+const car = {
+  color: 'red',
+  topSpeed: 300,
+  model: 'mustang',
+  company: 'ford',
+  turnOn() {
+    console.log('Started');
+  },
+  drive: function () {
+    console.log('You are driving ' + this.model);
+  },
+};
+
+car.year = 2015;
+car['price'] = 5000;
+
+car;
+
+car.turnOn();
+car.drive();
