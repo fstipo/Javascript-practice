@@ -71,6 +71,38 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
+/////////////////////////////////////////////////
+
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-/////////////////////////////////////////////////
+// for of loop
+
+for (const movement of movements) {
+  if (movement > 0) console.log(`You deposited ${movement}`);
+  else console.log(`You withdrew ${Math.abs(movement)}`);
+}
+
+console.log('-------forEach------');
+// forEach
+
+movements.forEach(movement => {
+  if (movement > 0) console.log(`You deposited ${movement}`);
+  else console.log(`You withdrew ${Math.abs(movement)}`);
+});
+
+console.log('------for of with index------');
+
+// for of with index
+for (const [i, movement] of movements.entries()) {
+  if (movement > 0) console.log(`Movement ${i + 1}: You deposited ${movement}`);
+  else console.log(`Movement ${i + 1}: You withdrew ${Math.abs(movement)}`);
+}
+
+console.log('-------forEach with index------');
+// forEach with index
+movements.forEach((movement, index, array) => {
+  console.log(array);
+  if (movement > 0)
+    console.log(`Movement ${index + 1}: You deposited ${movement}`);
+  else console.log(`Movement ${index + 1}: You withdrew ${Math.abs(movement)}`);
+});
