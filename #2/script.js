@@ -131,10 +131,14 @@ car.drive();
 // Functions to create objects
 
 function Car(miles, company, color, price) {
-  this.miles = miles;
-  this.company = company;
-  this.color = color;
-  this.price = price;
+  // this.miles = miles;
+  // this.company = company;
+  // this.color = color;
+  // this.price = price;
+  miles;
+  company;
+  color;
+  price;
 }
 
 const myCar1 = new Car(220, 'mazda', 'green', '155');
@@ -142,3 +146,20 @@ const myCar2 = new Car(320, 'bmw', 'pink', '300');
 
 console.log(myCar1);
 console.log(myCar2);
+
+// array
+
+const theList = [
+  'Franko',
+  'Stipanov',
+  true,
+  44,
+  null,
+  undefined,
+  { test: 'one', score: 500 },
+  ['one', 'two'],
+];
+
+theList.forEach(el => {
+  console.log(`${el}: ${typeof el}`);
+});
