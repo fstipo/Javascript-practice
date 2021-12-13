@@ -75,18 +75,47 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
-// at method
-const arr = [24, 54, 162];
-console.log(arr[0]);
-console.log(arr[1]);
-console.log(arr.at(0));
-console.log(arr.at(1));
+// // at method
+// const arr = [24, 54, 162];
+// console.log(arr[0]);
+// console.log(arr[1]);
+// console.log(arr.at(0));
+// console.log(arr.at(1));
 
-// getting last element of array
-console.log(arr[arr.length - 1]);
-console.log(arr.splice(-1)[0]);
-console.log(arr.at(-1));
+// // getting last element of array
+// console.log(arr[arr.length - 1]);
+// console.log(arr.splice(-1)[0]);
+// console.log(arr.at(-1));
 
-// at works at the strings
-console.log('Hello'.at(0));
-console.log('Hello'.at(-1));
+// // at works at the strings
+// console.log('Hello'.at(0));
+// console.log('Hello'.at(-1));
+
+// Objects
+
+let a = 1;
+
+const test = {
+  a1: 'test1',
+  a2: 'test2',
+};
+
+test.a1;
+test['a2'];
+console.log(test['a' + a]);
+console.log(test['a' + a]); //a1
+console.log(test['a' + (3 - 2 + 1)]);
+
+const car = {
+  brand: 'Mazda',
+  make: 'CX3',
+  year: 2018,
+  color: 'gray',
+};
+
+car.brand;
+car['year'];
+
+car.color = 'red';
+car['year'] = 2022;
+car;
