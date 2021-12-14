@@ -166,20 +166,76 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // console.log(a(2));
 
-const currencies = new Map([
-  ['USD', 'United States dollar'],
-  ['EUR', 'Euro'],
-  ['GBP', 'Pound sterling'],
-]);
+// const currencies = new Map([
+//   ['USD', 'United States dollar'],
+//   ['EUR', 'Euro'],
+//   ['GBP', 'Pound sterling'],
+// ]);
 
-// foreach with map
-currencies.forEach((value, key, map) => {
-  console.log(`${key}: ${value}`);
-});
+// // foreach with map
+// currencies.forEach((value, key, map) => {
+//   console.log(`${key}: ${value}`);
+// });
 
-const currenciesUnique = new Set(['USD', 'GPT', 'USD', 'EUR', 'EUR']);
-console.log(currenciesUnique);
+// const currenciesUnique = new Set(['USD', 'GPT', 'USD', 'EUR', 'EUR']);
+// console.log(currenciesUnique);
 
-currenciesUnique.forEach((value, _, map) => {
-  console.log(`${value}: ${value}`);
-});
+// currenciesUnique.forEach((value, _, map) => {
+//   console.log(`${value}: ${value}`);
+// });
+
+const car = {
+  color: 'red',
+  topSpeed: 300,
+  model: 'mustang',
+  turnOn: function () {
+    console.log('Started');
+  },
+  drive() {
+    console.log('I am driving');
+  },
+};
+car.price = 254;
+car['company'] = 'ford';
+
+car;
+
+const arr = ['a', 1, 2];
+
+car.drive();
+car.turnOn();
+
+function Car(color, topSpeed, model) {
+  this.color = color;
+  this.topSpeed = topSpeed;
+  this.model = model;
+}
+
+const myCar = new Car('red', '200', 'ford');
+const myCar2 = new Car('blue', '350', 'mazda');
+
+// Arrays
+
+const theList = [
+  'Franko',
+  'Stipanov',
+  true,
+  44,
+  null,
+  undefined,
+  { test: 'one', score: 500 },
+  ['one', 'two'],
+];
+
+theList[0];
+theList[1];
+theList[2];
+theList[3];
+theList[4];
+theList[5];
+theList[6].test;
+theList[6].score;
+theList[6]['test'];
+theList[7][0];
+theList[7][1];
+theList.length;
