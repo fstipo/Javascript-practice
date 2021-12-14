@@ -65,101 +65,121 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 // LECTURES
 
+// const currencies = new Map([
+//   ['USD', 'United States dollar'],
+//   ['EUR', 'Euro'],
+//   ['GBP', 'Pound sterling'],
+// ]);
+
+/////////////////////////////////////////////////
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// // for of loop
+
+// for (const movement of movements) {
+//   if (movement > 0) console.log(`Income: ${movement}`);
+//   else if (movement < 0) console.log(`Consumption: ${Math.abs(movement)}`);
+// }
+// console.log('-------forEach------');
+
+// // forEach
+// movements.forEach(movement => {
+//   if (movement > 0) console.log(`Income: ${movement}`);
+//   else if (movement < 0) console.log(`Consumption: ${Math.abs(movement)}`);
+// });
+// console.log('------for of with index------');
+
+// // for of with index
+// for (const [i, movement] of movements.entries()) {
+//   if (movement > 0) console.log(`${i + 1}:Income ${movement}`);
+//   else if (movement < 0)
+//     console.log(`${i + 1}:Consumption ${Math.abs(movement)}`);
+// }
+// console.log('-------forEach with index------');
+// // forEach with index
+// movements.forEach((movement, ind, arr) => {
+//   if (movement > 0) console.log(`${ind + 1}:Income ${movement}`);
+//   else if (movement < 0)
+//     console.log(`${ind + 1}:Consumption ${Math.abs(movement)}`);
+//   console.log(arr[ind]);
+// });
+
+// const car = {
+//   color: 'red',
+//   topSpeed: 300,
+//   model: 'mustang',
+//   company: 'ford',
+//   turnOn() {
+//     console.log('Started');
+//   },
+//   drive: function () {
+//     console.log('You are driving ' + this.model);
+//   },
+// };
+
+// car.year = 2015;
+// car['price'] = 5000;
+
+// car;
+
+// car.turnOn();
+// car.drive();
+
+// // Functions to create objects
+
+// function Car(miles, company, color, price) {
+//   // this.miles = miles;
+//   // this.company = company;
+//   // this.color = color;
+//   // this.price = price;
+//   miles;
+//   company;
+//   color;
+//   price;
+// }
+
+// const myCar1 = new Car(220, 'mazda', 'green', '155');
+// const myCar2 = new Car(320, 'bmw', 'pink', '300');
+
+// console.log(myCar1);
+// console.log(myCar2);
+
+// // array
+
+// const theList = [
+//   'Franko',
+//   'Stipanov',
+//   true,
+//   44,
+//   null,
+//   undefined,
+//   { test: 'one', score: 500 },
+//   ['one', 'two'],
+// ];
+
+// theList.forEach(el => {
+//   console.log(`${el}: ${typeof el}`);
+// });
+
+// const a = num => num + 2;
+
+// console.log(a(2));
+
 const currencies = new Map([
   ['USD', 'United States dollar'],
   ['EUR', 'Euro'],
   ['GBP', 'Pound sterling'],
 ]);
 
-/////////////////////////////////////////////////
-
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-
-// for of loop
-
-for (const movement of movements) {
-  if (movement > 0) console.log(`You deposited ${movement}`);
-  else console.log(`You withdrew ${Math.abs(movement)}`);
-}
-
-console.log('-------forEach------');
-// forEach
-
-movements.forEach(movement => {
-  if (movement > 0) console.log(`You deposited ${movement}`);
-  else console.log(`You withdrew ${Math.abs(movement)}`);
+// foreach with map
+currencies.forEach((value, key, map) => {
+  console.log(`${key}: ${value}`);
 });
 
-console.log('------for of with index------');
+const currenciesUnique = new Set(['USD', 'GPT', 'USD', 'EUR', 'EUR']);
+console.log(currenciesUnique);
 
-// for of with index
-for (const [i, movement] of movements.entries()) {
-  if (movement > 0) console.log(`Movement ${i + 1}: You deposited ${movement}`);
-  else console.log(`Movement ${i + 1}: You withdrew ${Math.abs(movement)}`);
-}
-
-console.log('-------forEach with index------');
-// forEach with index
-movements.forEach((movement, index, array) => {
-  console.log(array);
-  if (movement > 0)
-    console.log(`Movement ${index + 1}: You deposited ${movement}`);
-  else console.log(`Movement ${index + 1}: You withdrew ${Math.abs(movement)}`);
-});
-
-const car = {
-  color: 'red',
-  topSpeed: 300,
-  model: 'mustang',
-  company: 'ford',
-  turnOn() {
-    console.log('Started');
-  },
-  drive: function () {
-    console.log('You are driving ' + this.model);
-  },
-};
-
-car.year = 2015;
-car['price'] = 5000;
-
-car;
-
-car.turnOn();
-car.drive();
-
-// Functions to create objects
-
-function Car(miles, company, color, price) {
-  // this.miles = miles;
-  // this.company = company;
-  // this.color = color;
-  // this.price = price;
-  miles;
-  company;
-  color;
-  price;
-}
-
-const myCar1 = new Car(220, 'mazda', 'green', '155');
-const myCar2 = new Car(320, 'bmw', 'pink', '300');
-
-console.log(myCar1);
-console.log(myCar2);
-
-// array
-
-const theList = [
-  'Franko',
-  'Stipanov',
-  true,
-  44,
-  null,
-  undefined,
-  { test: 'one', score: 500 },
-  ['one', 'two'],
-];
-
-theList.forEach(el => {
-  console.log(`${el}: ${typeof el}`);
+currenciesUnique.forEach((value, _, map) => {
+  console.log(`${value}: ${value}`);
 });
