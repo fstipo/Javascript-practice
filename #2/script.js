@@ -111,3 +111,22 @@ let result2 = numArray.filter(num => {
 });
 
 console.log(result2);
+
+// Loops
+
+for (let counter = 0; counter < 5; counter++) {
+  console.log(`For loop is counting:${counter}`);
+}
+
+let counter = 0;
+while (counter < 5) {
+  console.log(`While loop is counting:${counter}`);
+  counter++;
+}
+
+let i = 0;
+
+do {
+  i += 1;
+  console.log('Do while loop ' + i);
+} while (i < 15);
