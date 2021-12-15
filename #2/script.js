@@ -96,37 +96,41 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 //   return el > 10;
 // });
 
-// filter
-
-const numArray = [77, 442, 162, 18, 244, 71];
-
-let result = numArray.filter(num => {
-  return num > 50;
-});
-
-console.log(result);
-
-let result2 = numArray.filter(num => {
-  return num < 100;
-});
-
-console.log(result2);
-
 // Loops
 
-for (let counter = 0; counter < 5; counter++) {
-  console.log(`For loop is counting:${counter}`);
+// for (let counter = 0; counter < 5; counter++) {
+//   console.log(`For loop is counting:${counter}`);
+// }
+
+// let counter = 0;
+// while (counter < 5) {
+//   console.log(`While loop is counting:${counter}`);
+//   counter++;
+// }
+
+// let i = 0;
+
+// do {
+//   i += 1;
+//   console.log('Do while loop ' + i);
+// } while (i < 15);
+
+// loop
+
+let arr = [];
+
+for (let i = 1; i < 10; i++) {
+  let stat = i % 2 ? true : false;
+  let temp = { name: `Lesson ${i}`, status: stat };
+  console.log(temp);
+  arr.push(temp);
 }
 
-let counter = 0;
-while (counter < 5) {
-  console.log(`While loop is counting:${counter}`);
-  counter++;
-}
+console.log(arr);
 
-let i = 0;
+const getTrue = arr.filter(function (el) {
+  console.log(el);
+  return el.status;
+});
 
-do {
-  i += 1;
-  console.log('Do while loop ' + i);
-} while (i < 15);
+console.log(getTrue);
