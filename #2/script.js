@@ -71,81 +71,10 @@ const inputClosePin = document.querySelector('.form__input--pin');
 //   ['GBP', 'Pound sterling'],
 // ]);
 
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 /////////////////////////////////////////////////
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-
-// // for of loop
-
-// for (const movement of movements) {
-//   if (movement > 0) console.log(`Income: ${movement}`);
-//   else if (movement < 0) console.log(`Consumption: ${Math.abs(movement)}`);
-// }
-// console.log('-------forEach------');
-
-// // forEach
-// movements.forEach(movement => {
-//   if (movement > 0) console.log(`Income: ${movement}`);
-//   else if (movement < 0) console.log(`Consumption: ${Math.abs(movement)}`);
-// });
-// console.log('------for of with index------');
-
-// // for of with index
-// for (const [i, movement] of movements.entries()) {
-//   if (movement > 0) console.log(`${i + 1}:Income ${movement}`);
-//   else if (movement < 0)
-//     console.log(`${i + 1}:Consumption ${Math.abs(movement)}`);
-// }
-// console.log('-------forEach with index------');
-// // forEach with index
-// movements.forEach((movement, ind, arr) => {
-//   if (movement > 0) console.log(`${ind + 1}:Income ${movement}`);
-//   else if (movement < 0)
-//     console.log(`${ind + 1}:Consumption ${Math.abs(movement)}`);
-//   console.log(arr[ind]);
-// });
-
-// const car = {
-//   color: 'red',
-//   topSpeed: 300,
-//   model: 'mustang',
-//   company: 'ford',
-//   turnOn() {
-//     console.log('Started');
-//   },
-//   drive: function () {
-//     console.log('You are driving ' + this.model);
-//   },
-// };
-
-// car.year = 2015;
-// car['price'] = 5000;
-
-// car;
-
-// car.turnOn();
-// car.drive();
-
-// // Functions to create objects
-
-// function Car(miles, company, color, price) {
-//   // this.miles = miles;
-//   // this.company = company;
-//   // this.color = color;
-//   // this.price = price;
-//   miles;
-//   company;
-//   color;
-//   price;
-// }
-
-// const myCar1 = new Car(220, 'mazda', 'green', '155');
-// const myCar2 = new Car(320, 'bmw', 'pink', '300');
-
-// console.log(myCar1);
-// console.log(myCar2);
-
-// // array
+// Arrays
 
 // const theList = [
 //   'Franko',
@@ -158,84 +87,62 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 //   ['one', 'two'],
 // ];
 
-// theList.forEach(el => {
-//   console.log(`${el}: ${typeof el}`);
-// });
+// theList[0];
+// theList[1];
+// theList[2];
+// theList[3];
+// theList[4];
+// theList[5];
+// theList[6].test;
+// theList[6].score;
+// theList[6]['test'];
+// theList[7][0];
+// theList[7][1];
+// theList.length;
 
-// const a = num => num + 2;
-
-// console.log(a(2));
-
-// const currencies = new Map([
-//   ['USD', 'United States dollar'],
-//   ['EUR', 'Euro'],
-//   ['GBP', 'Pound sterling'],
-// ]);
-
-// // foreach with map
-// currencies.forEach((value, key, map) => {
-//   console.log(`${key}: ${value}`);
-// });
-
-// const currenciesUnique = new Set(['USD', 'GPT', 'USD', 'EUR', 'EUR']);
-// console.log(currenciesUnique);
-
-// currenciesUnique.forEach((value, _, map) => {
-//   console.log(`${value}: ${value}`);
-// });
-
-const car = {
-  color: 'red',
-  topSpeed: 300,
-  model: 'mustang',
-  turnOn: function () {
-    console.log('Started');
-  },
-  drive() {
-    console.log('I am driving');
-  },
-};
-car.price = 254;
-car['company'] = 'ford';
-
-car;
-
-const arr = ['a', 1, 2];
-
-car.drive();
-car.turnOn();
-
-function Car(color, topSpeed, model) {
+// Create object with function
+function Car(color, model, topSpeed) {
   this.color = color;
-  this.topSpeed = topSpeed;
   this.model = model;
+  this.topSpeed = topSpeed;
 }
 
-const myCar = new Car('red', '200', 'ford');
-const myCar2 = new Car('blue', '350', 'mazda');
+const myCar = new Car('brown', 'ctx', '200');
+const myCar2 = new Car('red', 'ford', '120');
 
-// Arrays
-
-const theList = [
+const arr = [
   'Franko',
   'Stipanov',
   true,
   44,
   null,
   undefined,
-  { test: 'one', score: 500 },
+  { price: 12, name: 'Pedro' },
   ['one', 'two'],
 ];
 
-theList[0];
-theList[1];
-theList[2];
-theList[3];
-theList[4];
-theList[5];
-theList[6].test;
-theList[6].score;
-theList[6]['test'];
-theList[7][0];
-theList[7][1];
-theList.length;
+arr[0];
+arr[1];
+arr[2];
+arr[3];
+arr[4];
+arr[5];
+arr[6][0];
+arr[6][1];
+arr[7]['price'];
+arr[7].name;
+
+arr.length;
+let temp = Array.isArray(arr);
+arr[1] = 'Hello World';
+temp = arr.indexOf('Franko');
+temp = arr.indexOf('Stipanov');
+arr.includes('Franko');
+arr;
+arr.push('Pushed');
+arr.unshift('unshift');
+arr.shift();
+arr.splice(1, 2);
+arr;
+arr.unshift('make me first');
+arr;
