@@ -76,22 +76,38 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // Arrays
 
-const myArray = ['a', 'hello', 4, 8, 2, 'world', 'javascript', 'course', 99, 1];
-const myArray2 = [5, 12, 8, 130, 44];
+// const myArray = ['a', 'hello', 4, 8, 2, 'world', 'javascript', 'course', 99, 1];
+// const myArray2 = [5, 12, 8, 130, 44];
 
-myArray.sort();
-myArray2.sort();
-myArray.reverse();
+// myArray.sort();
+// myArray2.sort();
+// myArray.reverse();
 
-console.log(myArray.indexOf(50));
+// console.log(myArray.indexOf(50));
 
-if (myArray.indexOf(50) === -1) {
-  console.log('Element not found');
-}
+// if (myArray.indexOf(50) === -1) {
+//   console.log('Element not found');
+// }
 
-let newArray = myArray.concat(myArray2);
-let newArray2 = myArray2.concat(myArray);
+// let newArray = myArray.concat(myArray2);
+// let newArray2 = myArray2.concat(myArray);
 
-let found = myArray2.find(function (el) {
-  return el > 10;
+// let found = myArray2.find(function (el) {
+//   return el > 10;
+// });
+
+// filter
+
+const numArray = [77, 442, 162, 18, 244, 71];
+
+let result = numArray.filter(num => {
+  return num > 50;
 });
+
+console.log(result);
+
+let result2 = numArray.filter(num => {
+  return num < 100;
+});
+
+console.log(result2);
