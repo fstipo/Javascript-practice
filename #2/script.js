@@ -76,73 +76,22 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // Arrays
 
-// const theList = [
-//   'Franko',
-//   'Stipanov',
-//   true,
-//   44,
-//   null,
-//   undefined,
-//   { test: 'one', score: 500 },
-//   ['one', 'two'],
-// ];
+const myArray = ['a', 'hello', 4, 8, 2, 'world', 'javascript', 'course', 99, 1];
+const myArray2 = [5, 12, 8, 130, 44];
 
-// theList[0];
-// theList[1];
-// theList[2];
-// theList[3];
-// theList[4];
-// theList[5];
-// theList[6].test;
-// theList[6].score;
-// theList[6]['test'];
-// theList[7][0];
-// theList[7][1];
-// theList.length;
+myArray.sort();
+myArray2.sort();
+myArray.reverse();
 
-// Create object with function
-function Car(color, model, topSpeed) {
-  this.color = color;
-  this.model = model;
-  this.topSpeed = topSpeed;
+console.log(myArray.indexOf(50));
+
+if (myArray.indexOf(50) === -1) {
+  console.log('Element not found');
 }
 
-const myCar = new Car('brown', 'ctx', '200');
-const myCar2 = new Car('red', 'ford', '120');
+let newArray = myArray.concat(myArray2);
+let newArray2 = myArray2.concat(myArray);
 
-const arr = [
-  'Franko',
-  'Stipanov',
-  true,
-  44,
-  null,
-  undefined,
-  { price: 12, name: 'Pedro' },
-  ['one', 'two'],
-];
-
-arr[0];
-arr[1];
-arr[2];
-arr[3];
-arr[4];
-arr[5];
-arr[6][0];
-arr[6][1];
-arr[7]['price'];
-arr[7].name;
-
-arr.length;
-let temp = Array.isArray(arr);
-arr[1] = 'Hello World';
-temp = arr.indexOf('Franko');
-temp = arr.indexOf('Stipanov');
-arr.includes('Franko');
-arr;
-arr.push('Pushed');
-arr.unshift('unshift');
-arr.shift();
-arr.splice(1, 2);
-arr;
-arr.unshift('make me first');
-arr;
+let found = myArray2.find(function (el) {
+  return el > 10;
+});
