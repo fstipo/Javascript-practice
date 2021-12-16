@@ -91,69 +91,92 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // console.log('Hello'.at(0));
 // console.log('Hello'.at(-1));
 
-// Objects
+// // Objects
 
-function Car(color, type, topSpeed) {
-  this.color = color;
-  this.type = type;
-  this.topSpeed = topSpeed;
+// function Car(color, type, topSpeed) {
+//   this.color = color;
+//   this.type = type;
+//   this.topSpeed = topSpeed;
+// }
+
+// const myCar = new Car('red', 'mazda', '250');
+// const myCar2 = new Car('green', 'ford', '450');
+
+// const arr = [
+//   'Franko',
+//   'Stipanov',
+//   43,
+//   true,
+//   null,
+//   undefined,
+//   ['one', 'two'],
+//   { type: 'mazda', age: 44 },
+// ];
+
+// arr.length;
+// arr[0] = 24;
+// arr[1] = 124;
+// arr[2];
+// arr[3] = 58;
+// arr.push(25);
+// arr.unshift(1);
+
+// const arr2 = [5, 15, 2, 258, 145, 34, 52, 48];
+
+// arr2.filter((num) => num > 50);
+// arr2.filter((num) => num < 50);
+
+// for (let i = 0; i < 5; i++) console.log(`This is counter: ${i}`);
+
+// let x = 0;
+// while (x < 20) {
+//   console.log(`While counter: ${x}`);
+//   x += 2;
+// }
+
+// let y = 0;
+// do {
+//   y += 5;
+//   console.log(`This is do while: ${y}`);
+// } while (y > 50);
+
+// // Create object array with loop
+
+// let arrObject = [];
+
+// for (let i = 0; i < 10; i++) {
+//   let stat = i % 2 ? false : true;
+//   let temp = { name: `Lesson ${i + 1}`, status: stat };
+//   arrObject.push(temp);
+// }
+
+// console.log(arrObject);
+
+// const arrTrue = arrObject.filter((el) => {
+//   return !el.status;
+// });
+
+// console.log(arrTrue);
+
+// forEach, for , for in loop
+
+const obj = { a: 1, b: 2, c: 3 };
+
+for (let property in obj) {
+  console.log(property, obj[property]);
 }
 
-const myCar = new Car('red', 'mazda', '250');
-const myCar2 = new Car('green', 'ford', '450');
+const arr1 = ['a', 'b', 'c'];
 
-const arr = [
-  'Franko',
-  'Stipanov',
-  43,
-  true,
-  null,
-  undefined,
-  ['one', 'two'],
-  { type: 'mazda', age: 44 },
-];
-
-arr.length;
-arr[0] = 24;
-arr[1] = 124;
-arr[2];
-arr[3] = 58;
-arr.push(25);
-arr.unshift(1);
-
-const arr2 = [5, 15, 2, 258, 145, 34, 52, 48];
-
-arr2.filter((num) => num > 50);
-arr2.filter((num) => num < 50);
-
-for (let i = 0; i < 5; i++) console.log(`This is counter: ${i}`);
-
-let x = 0;
-while (x < 20) {
-  console.log(`While counter: ${x}`);
-  x += 2;
-}
-
-let y = 0;
-do {
-  y += 5;
-  console.log(`This is do while: ${y}`);
-} while (y > 50);
-
-// Create object array with loop
-
-let arrObject = [];
-
-for (let i = 0; i < 10; i++) {
-  let stat = i % 2 ? false : true;
-  let temp = { name: `Lesson ${i + 1}`, status: stat };
-  arrObject.push(temp);
-}
-
-console.log(arrObject);
-
-const arrTrue = arrObject.filter((el) => {
-  return !el.status;
+arr1.forEach((el, ind, arr) => {
+  console.log(el, ind);
+  console.log(arr.length);
 });
 
-console.log(arrTrue);
+for (let el in arr1) {
+  console.log(el, arr1[el]);
+}
+
+for (let i = 0; i < arr1.length; i++) {
+  console.log(i, arr1[i]);
+}
