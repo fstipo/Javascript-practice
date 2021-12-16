@@ -180,3 +180,13 @@ for (let el in arr1) {
 for (let i = 0; i < arr1.length; i++) {
   console.log(i, arr1[i]);
 }
+
+// map
+
+const numArr = [77, 44, 2, 162, 18, 244, 71];
+
+let mapArr = numArr.map((el) => {
+  return el * 50;
+});
+
+console.log(mapArr);
