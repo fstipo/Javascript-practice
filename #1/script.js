@@ -93,24 +93,25 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // Objects
 
-const car = {
-  color: 'red',
-  model: 'ctx',
-  type: 'mazda',
-  turnOn() {
-    console.log('Started');
-  },
-  worker: function () {
-    console.log('Is working');
-  },
-};
+function Car(color, type, topSpeed) {
+  this.color = color;
+  this.type = type;
+  this.topSpeed = topSpeed;
+}
 
-car.price = 145;
-car['top-speed'] = 320;
+const myCar = new Car('red', 'mazda', '250');
+const myCar2 = new Car('green', 'ford', '450');
 
-console.log(car);
+const arr = ["Franko","Stipanov",43,true,null,undefined,["one","two"],{type:"mazda",age:44}];
 
-console.log(car['c' + 'o' + 'l' + 'o' + 'r']);
-
-car.turnOn();
-car.worker();
+arr.length
+arr[0];
+arr[1];
+arr[2];
+arr[3];
+arr[4];
+arr[5];
+arr[6][0];
+arr[6][1];
+arr[arr.length-1].type;
+arr[arr.length-1][["age"];
