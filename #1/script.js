@@ -102,16 +102,58 @@ function Car(color, type, topSpeed) {
 const myCar = new Car('red', 'mazda', '250');
 const myCar2 = new Car('green', 'ford', '450');
 
-const arr = ["Franko","Stipanov",43,true,null,undefined,["one","two"],{type:"mazda",age:44}];
+const arr = [
+  'Franko',
+  'Stipanov',
+  43,
+  true,
+  null,
+  undefined,
+  ['one', 'two'],
+  { type: 'mazda', age: 44 },
+];
 
-arr.length
-arr[0];
-arr[1];
+arr.length;
+arr[0] = 24;
+arr[1] = 124;
 arr[2];
-arr[3];
-arr[4];
-arr[5];
-arr[6][0];
-arr[6][1];
-arr[arr.length-1].type;
-arr[arr.length-1][["age"];
+arr[3] = 58;
+arr.push(25);
+arr.unshift(1);
+
+const arr2 = [5, 15, 2, 258, 145, 34, 52, 48];
+
+arr2.filter((num) => num > 50);
+arr2.filter((num) => num < 50);
+
+for (let i = 0; i < 5; i++) console.log(`This is counter: ${i}`);
+
+let x = 0;
+while (x < 20) {
+  console.log(`While counter: ${x}`);
+  x += 2;
+}
+
+let y = 0;
+do {
+  y += 5;
+  console.log(`This is do while: ${y}`);
+} while (y > 50);
+
+// Create object array with loop
+
+let arrObject = [];
+
+for (let i = 0; i < 10; i++) {
+  let stat = i % 2 ? false : true;
+  let temp = { name: `Lesson ${i + 1}`, status: stat };
+  arrObject.push(temp);
+}
+
+console.log(arrObject);
+
+const arrTrue = arrObject.filter((el) => {
+  return !el.status;
+});
+
+console.log(arrTrue);
