@@ -93,29 +93,24 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // Objects
 
-let a = 1;
-
-const test = {
-  a1: 'test1',
-  a2: 'test2',
-};
-
-test.a1;
-test['a2'];
-console.log(test['a' + a]);
-console.log(test['a' + a]); //a1
-console.log(test['a' + (3 - 2 + 1)]);
-
 const car = {
-  brand: 'Mazda',
-  make: 'CX3',
-  year: 2018,
-  color: 'gray',
+  color: 'red',
+  model: 'ctx',
+  type: 'mazda',
+  turnOn() {
+    console.log('Started');
+  },
+  worker: function () {
+    console.log('Is working');
+  },
 };
 
-car.brand;
-car['year'];
+car.price = 145;
+car['top-speed'] = 320;
 
-car.color = 'red';
-car['year'] = 2022;
-car;
+console.log(car);
+
+console.log(car['c' + 'o' + 'l' + 'o' + 'r']);
+
+car.turnOn();
+car.worker();
