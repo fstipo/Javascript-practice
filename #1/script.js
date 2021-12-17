@@ -91,50 +91,33 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // console.log('Hello'.at(0));
 // console.log('Hello'.at(-1));
 
-//
+// Objects with functions
 
-const arr = [21, 458, 897, 45, 214, 97, 5, 64];
-
-const arrFilter = arr.filter((num) => num > 100).sort((a, b) => a - b);
-const arrFilter2 = arr.filter((num) => num < 100).sort((a, b) => a - b);
-
-console.log(arrFilter);
-console.log(arrFilter2.sort());
-
-for (let i = 0; i < 21; i += 3) {
-  console.log(`For Loop:Loop: ${i}`);
+function Person(name, lastName, age, isMerried) {
+  this.name = name;
+  this.lastName = lastName;
+  this.age = age;
+  this.isMerried = isMerried;
 }
 
-let x = 0;
+const me = new Person('Franko', 'Stipanov', 44, true);
+me;
+const bero = new Person('Bero', 'Beric', 32, false);
+console.log(me, bero);
 
-while (x < 100) {
-  console.log(`While Loop:${x}`);
-  x += 10;
+let arr = [];
+
+for (let i = 0; i < 9; i++) {
+  let step = i % 2 ? false : true;
+  let temp = { Lesson: i + 1, step };
+  arr.push(temp);
+  console.log(temp);
 }
 
-let y = 5;
-do {
-  console.log(`Do while:${y}`);
-  y += 2;
-} while (y < 22);
+console.log(arr);
 
-// Objects + objects methods
+const ar = arr.filter((el) => {
+  return !el.step;
+});
 
-const person = {
-  name: 'Steve',
-  lastName: 'Smith',
-  age: 32,
-  printName: function () {
-    console.log(this.name + ' ' + this.lastName);
-  },
-  drive() {
-    console.log(`${this.name} is driving!`);
-  },
-};
-
-person.isMerried = true;
-person['email'] = 'steve@gmail.com';
-
-person;
-person.printName();
-person.drive();
+console.log(ar);
