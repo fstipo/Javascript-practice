@@ -91,33 +91,26 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // console.log('Hello'.at(0));
 // console.log('Hello'.at(-1));
 
-// Objects with functions
+// forEach
 
-function Person(name, lastName, age, isMerried) {
-  this.name = name;
-  this.lastName = lastName;
-  this.age = age;
-  this.isMerried = isMerried;
+const arr = [2, 4, 6, 8, 10];
+const obj = { color: 'blue', two: 205 };
+
+// for (let x = 0; x < 10; x++) {
+//   console.log(x + 2);
+// }
+
+for (el in arr) {
+  console.log(el, arr[el]);
 }
 
-const me = new Person('Franko', 'Stipanov', 44, true);
-me;
-const bero = new Person('Bero', 'Beric', 32, false);
-console.log(me, bero);
-
-let arr = [];
-
-for (let i = 0; i < 9; i++) {
-  let step = i % 2 ? false : true;
-  let temp = { Lesson: i + 1, step };
-  arr.push(temp);
-  console.log(temp);
-}
-
-console.log(arr);
-
-const ar = arr.filter((el) => {
-  return !el.step;
+arr.forEach((el, index) => {
+  console.log(index, el);
 });
 
-console.log(ar);
+for (el in obj) {
+  console.log(el, obj[el]);
+}
+
+const newArr = arr.map((num) => num * 550);
+console.log(newArr);
