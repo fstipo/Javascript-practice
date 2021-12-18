@@ -114,3 +114,7 @@ for (el in obj) {
 
 const newArr = arr.map((num) => num * 550);
 console.log(newArr);
+
+for (el in arr) {
+  console.log(el, arr[el]);
+}
