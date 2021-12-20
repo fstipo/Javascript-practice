@@ -1,26 +1,26 @@
 // 'use strict';
 
-// Select multiple elements
+// Element manipulation
 
-const secondEl = document.getElementsByClassName('second');
-console.log(secondEl, secondEl.length);
+// remove div with class pickMe
+const divPickMeEl = document.querySelector('.pickMe');
+divPickMeEl.style['background-color'] = 'yellow';
+divPickMeEl.remove();
 
-const firstEl = document.querySelectorAll('.first');
-console.log(firstEl, firstEl.length);
+// Update list items IDs with count
 
-const spanEl = document.getElementsByTagName('span');
-console.log(spanEl, spanEl.length);
+// const liListEl = document.querySelectorAll('li');
+// console.log(liListEl);
+// liListEl.forEach((el, i) => {
+//   el.id = `li${i + 1}`;
+//   el.textContent = 'list item #' + i;
+//   if (el.getAttribute('class')) {
+//     console.log(el.getAttribute('class'));
+//   }
+// });
 
-for (let i = 0; i < secondEl.length; i++) {
-  const el = secondEl[i];
-  el.style.backgroundColor = 'green';
+const liList = document.querySelectorAll('a');
+liList.forEach((el) => {
+  el.setAttribute('href', 'https://www.muzika.hr/');
   console.log(el);
-}
-
-// Only works with node list
-firstEl.forEach((el) => {
-  el.innerText = 'Hey';
-  el.style.color = 'white';
-  el.style.fontWeight = 'bold';
-  el.style['font-size'] = '40px';
 });
