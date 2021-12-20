@@ -1,19 +1,22 @@
 // 'use strict';
 
-// console.dir(document)
+// Select multiple elements
 
-console.dir(document);
-document.querySelector('h1').innerText = 'Is this working?';
-console.log(document.URL);
-console.log(document.location);
+const secondEl = document.getElementsByClassName('second');
+console.log(secondEl, secondEl.length);
 
-document.getElementById('myID').style.backgroundColor = 'blue';
-document.querySelector('p').style.backgroundColor = 'yellow';
-document.querySelector('p').style.backgroundColor = 'yellow';
-document.querySelector('.first').style.color = 'red';
-document.querySelector('.first span').style.color = 'purple';
-document.querySelector('span:nth-child(5)').style.color = 'purple';
-document.querySelector('li:last-child').style.display = 'none';
-document.querySelector('li:last-child').style.backgroundColor = 'blue';
-document.querySelector('li:nth-child(3)').style.backgroundColor = 'green';
-document.querySelector('li:nth-child(5)').style.backgroundColor = 'purple';
+const firstEl = document.querySelectorAll('.first');
+console.log(firstEl, firstEl.length);
+
+const spanEl = document.getElementsByTagName('span');
+console.log(spanEl, spanEl.length);
+
+for (let i = 0; i < secondEl.length; i++) {
+  const el = secondEl[i];
+  el.style.backgroundColor = 'green';
+  console.log(el);
+}
+
+firstEl.forEach((el) => {
+  return (el.innerText = 'Hey');
+});
