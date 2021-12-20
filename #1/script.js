@@ -17,6 +17,10 @@ for (let i = 0; i < secondEl.length; i++) {
   console.log(el);
 }
 
+// Only works with node list
 firstEl.forEach((el) => {
-  return (el.innerText = 'Hey');
+  el.innerText = 'Hey';
+  el.style.color = 'white';
+  el.style.fontWeight = 'bold';
+  el.style['font-size'] = '40px';
 });
