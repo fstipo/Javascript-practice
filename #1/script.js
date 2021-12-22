@@ -2,14 +2,18 @@
 
 // Element classes
 
-const listItem = document.querySelectorAll('li');
-console.log(listItem);
+const listItems = document.querySelectorAll('li');
+// console.log(listItems);
 
-listItem.forEach((el) => {
-  console.log(el);
-  el.innerText = el.className ? el.className : 'no Class';
+for (let i = 0; i < listItems.length; i++) {
+  // console.log(listItems[i].className);
+  listItems[i].textContent = listItems[i].className
+    ? listItems[i].className
+    : 'No Class';
+  const el = listItems[i];
   el.classList.add('test');
   el.classList.toggle('first');
   el.classList.remove('test');
-  el.classList.replace('first', 'test5');
-});
+  el.classList.replace('first', 'abrakadabra');
+  console.log(el);
+}
