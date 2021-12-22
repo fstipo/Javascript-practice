@@ -1,37 +1,17 @@
 // 'use strict';
 
-// Element classes
+// style
 
-const el = document.querySelector('div.first');
-console.dir(el);
+const h1 = document.querySelector('h1');
+console.log(h1.textContent);
 
-console.log(el.children);
-// length
-console.log(el.children.length);
-console.log(el.childNodes.length);
-
-// for loop
-for (let i = 0; i < el.children.length; i++) {
-  console.log(el.children[i].textContent);
-}
-
-for (let i = 0; i < el.childNodes.length; i++) {
-  console.log(el.children[i]);
-}
-
-// Doesn't work with HTMLCollection
-// // forEach
-// el.children.forEach((el) => {
-//   console.log(el);
-// });
-
-el.childNodes.forEach((el) => {
-  console.log(el);
-});
-
-console.log(el.parentElement);
-console.log(el.parentNode);
-console.log(el.nextElementSibling);
-console.log(el.nextSibling);
-console.log(el.previousElementSibling);
-console.log(el.previousSibling);
+h1.style.backgroundColor = 'yellow';
+h1.style.color = 'darkGray';
+h1.style.display = 'none';
+h1.style.display = 'block';
+h1.style.marginLeft = '25px';
+h1.style.marginRight = '25px';
+h1.style.padding = '25px';
+h1.style['font-size'] = '45px';
+h1.style.border = '2px dotted purple';
+h1.style['text-align'] = 'center';
