@@ -20,3 +20,14 @@ div {
   text-align: center;
   margin: 50px;
 }
+
+span {
+  display: block;
+}
+
+.first {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
