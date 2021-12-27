@@ -15,3 +15,8 @@ body {
 div {
   text-align: center;
 }
+
+.img-box {
+  text-align: center;
+  margin: 50px;
+}

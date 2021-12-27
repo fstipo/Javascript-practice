@@ -1,17 +1,16 @@
 // 'use strict';
 
-// style
+// Select imgs
 
-const h1 = document.querySelector('h1');
-console.log(h1.textContent);
+const imgEl = document.querySelectorAll('img');
+console.log(imgEl);
 
-h1.style.backgroundColor = 'yellow';
-h1.style.color = 'darkGray';
-h1.style.display = 'none';
-h1.style.display = 'block';
-h1.style.marginLeft = '25px';
-h1.style.marginRight = '25px';
-h1.style.padding = '25px';
-h1.style['font-size'] = '45px';
-h1.style.border = '2px dotted purple';
-h1.style['text-align'] = 'center';
+for (let i = 0; i < imgEl.length; i++) {
+  imgEl[i].addEventListener('click', resizeImg);
+}
+
+function resizeImg() {
+  console.log(this);
+  console.log(this.src);
+  window.open(this.src, 'myImg', 'resizable=yes width=500');
+}
