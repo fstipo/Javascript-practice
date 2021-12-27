@@ -5,9 +5,14 @@
 const imgEl = document.querySelectorAll('img');
 console.log(imgEl);
 
-for (let i = 0; i < imgEl.length; i++) {
-  imgEl[i].addEventListener('click', resizeImg);
-}
+// for (let i = 0; i < imgEl.length; i++) {
+//   imgEl[i].addEventListener('click', resizeImg);
+// }
+
+imgEl.forEach((el) => {
+  console.log(el);
+  el.onclick = resizeImg;
+});
 
 function resizeImg() {
   console.log(this);
