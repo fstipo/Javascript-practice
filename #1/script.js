@@ -16,17 +16,20 @@ const changeColor = () => {
 btn.addEventListener('click', changeColor);
 
 const spanEl = document.querySelectorAll('span');
-console.log(spanEl);
 
-spanEl.forEach((el) => {
-  console.log(el);
+spanEl.forEach(function (el) {
   el.style.border = '1px solid black';
   el.style.width = '80vW';
   el.style.padding = '20px';
-  el.addEventListener('click', () => {
+  el.addEventListener('click', (e) => {
     let temp = `rgb(${randomNumber(255)},${randomNumber(255)},${randomNumber(
       255
     )})`;
+
+    console.dir(e);
+    console.log(e.target);
+    console.log(this);
+    console.log(el);
     el.style.backgroundColor = temp;
     el.style.color = 'white';
     el.style['font-weight'] = 'bold';
