@@ -1,21 +1,20 @@
 // 'use strict';
 
-// Select imgs
+// add item
+const inputEl = document.querySelector('input');
+const btn = document.querySelector('button');
+const itemList = document.querySelector('.second');
+console.log(inputEl);
+console.log(btn);
+console.log(itemList);
 
-const imgEl = document.querySelectorAll('img');
-console.log(imgEl);
+const addItem = () => {
+  console.log(inputEl.value);
+  const li = document.createElement('li');
+  li.innerText = inputEl.value;
+  if (inputEl.value.length > 3) {
+    itemList.appendChild(li);
+  }
+};
 
-// for (let i = 0; i < imgEl.length; i++) {
-//   imgEl[i].addEventListener('click', resizeImg);
-// }
-
-imgEl.forEach((el) => {
-  console.log(el);
-  el.onclick = resizeImg;
-});
-
-function resizeImg() {
-  console.log(this);
-  console.log(this.src);
-  window.open(this.src, 'myImg', 'resizable=yes width=500');
-}
+btn.addEventListener('click', addItem);
