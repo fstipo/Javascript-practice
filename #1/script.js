@@ -1,38 +1,40 @@
 // 'use strict';
 
-// add item
-const btn = document.querySelector('button');
-const randomNumber = (num) => {
-  return Math.floor(Math.random() * (num + 1));
-};
+// key events
 
-const changeColor = () => {
-  let temp = `rgb(${randomNumber(255)},${randomNumber(255)},${randomNumber(
-    255
-  )})`;
-  document.body.style.backgroundColor = temp;
-};
+// const keys = {};
 
-btn.addEventListener('click', changeColor);
+// document.addEventListener('keydown', onKeyDown);
+// document.addEventListener('keyup', onKeyUp);
 
-const spanEl = document.querySelectorAll('span');
+// function onKeyDown(e) {
+//   e.preventDefault();
+//   console.log(`(Key down) key: ${e.key}, keyCode: ${e.keyCode}`);
+//   keys[e.keys] = true;
+//   console.log(keys);
+// }
 
-spanEl.forEach(function (el) {
-  el.style.border = '1px solid black';
-  el.style.width = '80vW';
-  el.style.padding = '20px';
-  el.addEventListener('click', (e) => {
-    let temp = `rgb(${randomNumber(255)},${randomNumber(255)},${randomNumber(
-      255
-    )})`;
+// function onKeyUp(e) {
+//   e.preventDefault();
+//   console.log(`(Key up) key: ${e.key}, keyCode: ${e.keyCode}`);
+//   console.dir(e);
+//   keys[e.keys] = false;
+//   console.log(keys);
+// }
 
-    console.dir(e);
-    console.log(e.target);
-    console.log(this);
-    console.log(el);
-    el.style.backgroundColor = temp;
-    el.style.color = 'white';
-    el.style['font-weight'] = 'bold';
-    el.innerText = temp;
-  });
-});
+const inputEl = document.querySelector('input');
+
+inputEl.addEventListener('keypress', addItem);
+
+function addItem(e) {
+  //   document.querySelector('h1').innerText = inputEl.value;
+  if (inputEl.value.length >= 10) {
+    inputEl.style.backgroundColor = 'red';
+  } else {
+    inputEl.style.backgroundColor = 'white';
+  }
+  if (e.keyCode === 13 && inputEl.value.length > 1) {
+    e.preventDefault();
+    document.querySelector('h1').innerText = inputEl.value;
+  }
+}
