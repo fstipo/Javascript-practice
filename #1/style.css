@@ -30,4 +30,6 @@ div {
 
 .strike {
   text-decoration: line-through;
+  background-color: rgb(230, 230, 230);
+  color: red;
 }
