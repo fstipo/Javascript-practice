@@ -2,39 +2,37 @@
 
 // key events
 
+const inputEl = document.querySelector('input');
+const btn = document.querySelector('button');
+const h1 = document.querySelector('h1');
+
+const changeHeading = (e) => {
+  e.preventDefault;
+
+  if (e.key === 'Enter' && inputEl.value.length > 4) {
+    h1.innerText = inputEl.value;
+    h1.style.backgroundColor = 'yellow';
+  } else if (inputEl.value.length <= 4) {
+    h1.style.backgroundColor = 'white';
+  }
+};
+
+inputEl.addEventListener('keypress', changeHeading);
+
 // const keys = {};
+
+// const onKeyDown = (e) => {
+//   keys[e.key] = true;
+//   console.dir(e);
+//   console.log(keys);
+// };
+
+// const onKeyUp = (e) => {
+//   keys[e.key] = false;
+//   console.dir(e.keyCode);
+//   console.dir(e.key);
+//   console.log(keys);
+// };
 
 // document.addEventListener('keydown', onKeyDown);
 // document.addEventListener('keyup', onKeyUp);
-
-// function onKeyDown(e) {
-//   e.preventDefault();
-//   console.log(`(Key down) key: ${e.key}, keyCode: ${e.keyCode}`);
-//   keys[e.keys] = true;
-//   console.log(keys);
-// }
-
-// function onKeyUp(e) {
-//   e.preventDefault();
-//   console.log(`(Key up) key: ${e.key}, keyCode: ${e.keyCode}`);
-//   console.dir(e);
-//   keys[e.keys] = false;
-//   console.log(keys);
-// }
-
-const inputEl = document.querySelector('input');
-
-inputEl.addEventListener('keypress', addItem);
-
-function addItem(e) {
-  //   document.querySelector('h1').innerText = inputEl.value;
-  if (inputEl.value.length >= 10) {
-    inputEl.style.backgroundColor = 'red';
-  } else {
-    inputEl.style.backgroundColor = 'white';
-  }
-  if (e.keyCode === 13 && inputEl.value.length > 1) {
-    e.preventDefault();
-    document.querySelector('h1').innerText = inputEl.value;
-  }
-}
