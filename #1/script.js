@@ -1,14 +1,22 @@
 // 'use strict';
 
-// key events challenge
+// Mouse events
+const listEl = document.querySelector('ul');
+const listItemsEl = document.querySelectorAll('li');
 const inputEl = document.querySelector('input');
+const btn = document.querySelector('button');
 
-const addDiv = (e) => {
-  const divEl = document.createElement('div');
-  divEl.textContent = `${inputEl.value} (key:${e.key}) keyCode:${e.keyCode}`;
-  document.body.appendChild(divEl);
+btn.addEventListener('click', () => {
+  const li = document.createElement('li');
+  li.innerText = inputEl.value;
+  listEl.appendChild(li);
   inputEl.value = '';
-  console.log(divEl);
-};
+});
 
-inputEl.addEventListener('keypress', addDiv);
+listItemsEl.forEach((el) => {
+  el.addEventListener('click', () => {
+    el.classList.toggle('strike');
+    el.innerHTML = el.textContent + `<span>X</span>`;
+    console.log(el.innerText);
+  });
+});
