@@ -1,32 +1,31 @@
 // 'use strict';
 
-// Mouse events
+// Add List Item
 const mainList = document.querySelector('ul');
-const listItemsEl = document.querySelectorAll('li');
+const listItems = document.querySelectorAll('li');
 const inputEl = document.querySelector('input');
-const btn = document.querySelector('button');
 
-const addListItem = () => {
-  const li = document.createElement('li');
-  li.innerText = inputEl.value;
-  mainList.appendChild(li);
-  inputEl.value = '';
-};
-
-btn.addEventListener('click', addListItem);
-
-inputEl.addEventListener('keypress', (e) => {
-  if (e.key === 'Enter' && inputEl.value.length > 1) {
-    addListItem();
-  }
-});
-
-listItemsEl.forEach((el) => {
+listItems.forEach((el) => {
   el.addEventListener('click', () => {
-    const addClass = el.classList.toggle('strike');
-    if (addClass) {
+    let strike = el.classList.toggle('strike');
+    if (strike) {
       let span = document.createElement('span');
-      span.textContent = ' X ';
+      span.innerText = ' X ';
+      el.appendChild(span);
+      span.addEventListener('click', () => {
+        el.parentElement.removeChild(el);
+      });
+    } else {
+      el.getElementsByTagName('span')[0].remove();
     }
   });
+});
+
+inputEl.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter' && inputEl.value.length > 0) {
+    let li = document.createElement('li');
+    li.textContent = inputEl.value;
+    mainList.appendChild(li);
+    inputEl.value = '';
+  }
 });
