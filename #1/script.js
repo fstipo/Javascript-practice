@@ -6,29 +6,32 @@ const listItems = document.querySelectorAll('li');
 const inputEl = document.querySelector('input');
 
 const myList = (e) => {
-  let el = e.target;
-  let elClass = el.classList.toggle('strike');
-  if (elClass) {
-    let span = document.createElement('span');
-    span.innerText = ' X ';
+  const el = e.target;
+  const strike = el.classList.toggle('strike');
+  if (strike) {
+    const span = document.createElement('span');
+    span.textContent = ' X ';
     el.appendChild(span);
     span.addEventListener('click', () => {
-      span.parentElement.remove();
+      el.parentNode.removeChild(el);
     });
   } else {
     el.getElementsByTagName('span')[0].remove();
   }
 };
 
-const newItem = (e) => {
-  if (e.code === 'Enter' && inputEl.value.length > 0) {
+const addItem = (e) => {
+  if (e.key === 'Enter' && inputEl.value.length > 0) {
     const li = document.createElement('li');
     li.addEventListener('click', myList);
-    li.innerText = inputEl.value;
+    li.textContent = inputEl.value;
     mainList.appendChild(li);
     inputEl.value = '';
   }
 };
 
-listItems.forEach((el) => el.addEventListener('click', myList));
-inputEl.addEventListener('keypress', newItem);
+listItems.forEach((el) => {
+  el.addEventListener('click', myList);
+});
+
+inputEl.addEventListener('keypress', addItem);

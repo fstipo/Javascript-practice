@@ -33,3 +33,7 @@ div {
   background-color: rgb(230, 230, 230);
   color: red;
 }
+
+span {
+  cursor: pointer;
+}
