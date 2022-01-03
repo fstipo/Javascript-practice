@@ -1,37 +1,29 @@
 // 'use strict';
 
-// Add List Item
-const mainList = document.querySelector('ul');
-const listItems = document.querySelectorAll('li');
-const inputEl = document.querySelector('input');
+// Event Bubbling and Capturing
 
-const myList = (e) => {
-  const el = e.target;
-  const strike = el.classList.toggle('strike');
-  if (strike) {
-    const span = document.createElement('span');
-    span.textContent = ' X ';
-    el.appendChild(span);
-    span.addEventListener('click', () => {
-      el.parentNode.removeChild(el);
-    });
-  } else {
-    el.getElementsByTagName('span')[0].remove();
-  }
-};
+const divElements = document.querySelectorAll('div');
+const outputEl = document.querySelector('section');
 
-const addItem = (e) => {
-  if (e.key === 'Enter' && inputEl.value.length > 0) {
-    const li = document.createElement('li');
-    li.addEventListener('click', myList);
-    li.textContent = inputEl.value;
-    mainList.appendChild(li);
-    inputEl.value = '';
-  }
-};
+for (let i = 0; i < divElements.length; i++) {
+  const el = divElements[i];
+  el.style.border = '1px solid red';
+  el.style.width = '150px';
+  el.style.padding = '20px';
+  el.style.margin = '20px';
+  el.v = i + 1;
+  el.addEventListener('click', capture, true);
+  el.addEventListener('click', bubble, false);
+}
 
-listItems.forEach((el) => {
-  el.addEventListener('click', myList);
-});
+function output(msg) {
+  outputEl.innerHTML += `${msg} <br/>`;
+}
 
-inputEl.addEventListener('keypress', addItem);
+function bubble() {
+  output('bubble:' + this.v);
+}
+
+function capture() {
+  output('capture:' + this.v);
+}
