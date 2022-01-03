@@ -3,27 +3,31 @@
 // Event Bubbling and Capturing
 
 const divElements = document.querySelectorAll('div');
+console.log(divElements);
 const outputEl = document.querySelector('section');
+console.log(outputEl);
 
-for (let i = 0; i < divElements.length; i++) {
-  const el = divElements[i];
+const output = (msg) => {
+  outputEl.innerHTML += `${msg} <br>`;
+};
+
+divElements.forEach((el, index) => {
   el.style.border = '1px solid red';
-  el.style.width = '150px';
+  el.style.width = '100px';
   el.style.padding = '20px';
-  el.style.margin = '20px';
-  el.v = i + 1;
-  el.addEventListener('click', capture, true);
-  el.addEventListener('click', bubble, false);
-}
-
-function output(msg) {
-  outputEl.innerHTML += `${msg} <br/>`;
-}
-
-function bubble() {
-  output('bubble:' + this.v);
-}
-
-function capture() {
-  output('capture:' + this.v);
-}
+  el.v = index + 1;
+  el.addEventListener(
+    'click',
+    () => {
+      output('capture: ' + el.v);
+    },
+    true
+  );
+  el.addEventListener(
+    'click',
+    () => {
+      output('bubble:' + el.v);
+    },
+    false
+  );
+});
