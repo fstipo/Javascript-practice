@@ -1,35 +1,15 @@
 // 'use strict';
 
-// Event Bubbling and Capturing
+// Number Methods
+let num1 = 10000.6547;
+let num2 = '123';
 
-const divElements = document.querySelectorAll('div');
-const outputEl = document.querySelector('section');
-
-const random = (num) => Math.floor(Math.random() * num);
-
-const randomColor = `rgb(${random(256)},${random(256)},${random(256)})`;
-const msg = divElements.forEach((el, index) => {
-  el.style.border = '1px solid green';
-  el.style.padding = '20px';
-  el.style.width = '120px';
-  el.style.width = '120px';
-  el.style.margin = '30px';
-  el.v = index + 1;
-  el.addEventListener(
-    'click',
-    function () {
-      el.style.backgroundColor = randomColor;
-      outputEl.innerHTML += `   capturing:  +${this.v} <br>
-      `;
-    },
-    true
-  );
-  el.addEventListener(
-    'click',
-    function () {
-      this.style.backgroundColor = randomColor;
-      outputEl.innerHTML += `   bubble:  -${this.v} <br>`;
-    },
-    false
-  );
-});
+console.log(num1);
+console.log(num2);
+console.log(isNaN(num1));
+console.log(isNaN(num2));
+console.log(num1.toFixed(2));
+console.log(typeof num1.toFixed(1));
+console.log(parseInt(num2));
+console.log(Number(true));
+console.log(Number('true'));
