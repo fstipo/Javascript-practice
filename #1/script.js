@@ -1,15 +1,26 @@
 // 'use strict';
 
-// Math methods
+// Includes + ternary
+// const arr = [1, 2, 5, 8];
 
-const getRandomInt = (min, max) => {
+// const isNumber = (val) => {
+//   let temp = val ? 'yes' : 'No';
+//   console.log(temp);
+// };
+// isNumber(arr.includes(5));
+// isNumber(arr.includes(8));
+// isNumber(arr.includes(81));
+// isNumber(arr.includes(1));
+
+const excludeNumbers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19];
+const randomNumber = (min, max) => {
   min = Math.ceil(min);
   max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min;
+  let num = Math.floor(Math.random() * (max - min) + min);
+  return excludeNumbers.includes(num) ? randomNumber(min, max) : num;
 };
 
-// console.log(getRandomInt(1, 11));
-
-for (let i = 0; i < 10; i++) {
-  console.log(getRandomInt(1, 6));
+for (let i = 0; i < 50; i++) {
+  let num = randomNumber(1, 20);
+  console.log(num);
 }
