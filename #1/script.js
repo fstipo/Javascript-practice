@@ -25,15 +25,27 @@
 //   console.log(num);
 // }
 
-// Number methods
+// String Methods
 
-const myNum1 = 12344.345;
-const myNum2 = '13454';
+const str = '    Hello World,JavaScript is the best in the World!';
 
-console.log(typeof myNum1);
-console.log(myNum1);
-console.log(typeof myNum2);
-console.log(myNum2);
-console.log(typeof Number(myNum2));
-console.log(myNum1.toFixed(1));
-console.log(parseInt(myNum1));
+console.log(str);
+console.log(str.length);
+console.log(str.trim().length);
+console.log(str.trim().toLocaleLowerCase());
+console.log(str.trim().toLocaleUpperCase());
+console.log(str.trim().toUpperCase().split(' '));
+console.log(str.trim().toUpperCase().split(','));
+console.log(str.trim().toUpperCase().split('L'));
+console.log(str.trim().charAt('3'));
+console.log(str.trim().charAt('6'));
+console.log(str.trim()[6]);
+console.log(str.trim().slice(6));
+console.log(str.trim().slice(6, -7));
+console.log(str.trim().slice(6, 10));
+console.log(str.trim().substring(6, 15));
+console.log(str.trim().replace('World', 'GOLD'));
+console.log(str.trim().replaceAll('World', 'GOLD'));
+console.log(str.trim().indexOf('W'));
+console.log(str.trim().lastIndexOf('W'));
+console.log(str.trim().search('best'));
