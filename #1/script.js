@@ -26,18 +26,31 @@
 // }
 
 // Math Methods
-const arr = [1, 3, 5, 7, 9];
+// const arr = [1, 3, 5, 7, 9];
 
-console.log(arr.includes(1));
-console.log(arr.includes(10));
+// console.log(arr.includes(1));
+// console.log(arr.includes(10));
 
-const isIncluded = (num) => {
-  let temp = num ? 'yes' : 'No';
-  console.log(temp);
+// const isIncluded = (num) => {
+//   let temp = num ? 'yes' : 'No';
+//   console.log(temp);
+// };
+
+// isIncluded(arr.includes(1));
+// isIncluded(arr.includes(2));
+// isIncluded(arr.includes(3));
+// isIncluded(arr.includes(4));
+// isIncluded(arr.includes(14));
+
+const arrExclude = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19];
+const randomNumbers = (min, max) => {
+  min = Math.floor(min);
+  max = Math.floor(max);
+  let num = Math.floor(Math.random() * (max - min) + min);
+  return arrExclude.includes(num) ? randomNumbers(min, max) : num;
 };
 
-isIncluded(arr.includes(1));
-isIncluded(arr.includes(2));
-isIncluded(arr.includes(3));
-isIncluded(arr.includes(4));
-isIncluded(arr.includes(14));
+for (let i = 0; i < 20; i++) {
+  let num = randomNumbers(1, 21);
+  console.log(num);
+}
