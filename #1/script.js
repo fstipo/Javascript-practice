@@ -26,14 +26,18 @@
 // }
 
 // Math Methods
+const arr = [1, 3, 5, 7, 9];
 
-const randomNumber = (min, max) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min) + min);
+console.log(arr.includes(1));
+console.log(arr.includes(10));
+
+const isIncluded = (num) => {
+  let temp = num ? 'yes' : 'No';
+  console.log(temp);
 };
 
-for (let i = 0; i < 50; i++) {
-  console.log(i + 1, randomNumber(1, 11));
-  randomNumber(1, 11);
-}
+isIncluded(arr.includes(1));
+isIncluded(arr.includes(2));
+isIncluded(arr.includes(3));
+isIncluded(arr.includes(4));
+isIncluded(arr.includes(14));
