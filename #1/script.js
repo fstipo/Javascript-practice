@@ -25,27 +25,15 @@
 //   console.log(num);
 // }
 
-// String Methods
+// Math Methods
 
-const str = '    Hello World,JavaScript is the best in the World!';
+const randomNumber = (min, max) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min);
+};
 
-console.log(str);
-console.log(str.length);
-console.log(str.trim().length);
-console.log(str.trim().toLocaleLowerCase());
-console.log(str.trim().toLocaleUpperCase());
-console.log(str.trim().toUpperCase().split(' '));
-console.log(str.trim().toUpperCase().split(','));
-console.log(str.trim().toUpperCase().split('L'));
-console.log(str.trim().charAt('3'));
-console.log(str.trim().charAt('6'));
-console.log(str.trim()[6]);
-console.log(str.trim().slice(6));
-console.log(str.trim().slice(6, -7));
-console.log(str.trim().slice(6, 10));
-console.log(str.trim().substring(6, 15));
-console.log(str.trim().replace('World', 'GOLD'));
-console.log(str.trim().replaceAll('World', 'GOLD'));
-console.log(str.trim().indexOf('W'));
-console.log(str.trim().lastIndexOf('W'));
-console.log(str.trim().search('best'));
+for (let i = 0; i < 50; i++) {
+  console.log(i + 1, randomNumber(1, 11));
+  randomNumber(1, 11);
+}
