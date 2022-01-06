@@ -1,19 +1,15 @@
 'use strict';
 
-const message = ['Hello', 'Hi', 'Bye Bye', 'Bla bla', 'Aloha', 'Good Night'];
-const divEl = document.querySelector('div');
-const randomText = (arr) => {
-  return arr[Math.floor(Math.random() * arr.length)];
-};
-divEl.style.backgroundColor = 'yellow';
-divEl.style.textAlign = 'center';
-divEl.style.fontSize = '56px';
-divEl.style.width = '50%';
-divEl.innerText = randomText(message);
-divEl.addEventListener('click', () => {
-  divEl.innerText = randomText(message);
-});
+const excludeNumbers = [1, 4, 8, 12, 16];
 
-for (let i = 0; i < 10; i++) {
-  console.log(randomText(message));
+const randomNumbers = (min, max) => {
+  min = Math.floor(min);
+  max = Math.ceil(max);
+  let num = Math.floor(Math.random() * (max - min)) + min;
+  return excludeNumbers.includes(num) ? randomNumbers(min, max) : num;
+};
+
+for (let i = 0; i < 50; i++) {
+  let num = randomNumbers(0, 20);
+  console.log(num);
 }
