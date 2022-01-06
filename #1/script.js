@@ -1,9 +1,32 @@
 'use strict';
 
-const changeColor = (el) => {
-  let hexNum = Math.random().toString(16).substr(-6);
-  document.body.style.backgroundColor = `#${hexNum}`;
+const player = {
+  speed: 10,
+  x: 692,
+  y: 498,
+  el: document.querySelector('.btn'),
 };
 
-const btn = document.querySelector('.btn');
-btn.addEventListener('click', changeColor);
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('Start');
+});
+
+document.addEventListener('keydown', (e) => {
+  console.log(player.el.offsetLeft);
+  console.log(player.el.offsetTop);
+  if (e.key === 'ArrowUp') {
+    player.y -= player.speed;
+  }
+  if (e.key === 'ArrowDown') {
+    player.y += player.speed;
+  }
+  if (e.key === 'ArrowLeft') {
+    player.x -= player.speed;
+  }
+  if (e.key === 'ArrowRight') {
+    player.x += player.speed;
+  }
+  player.el.style.position = 'absolute';
+  player.el.style.left = player.x + 'px';
+  player.el.style.top = player.y + 'px';
+});
