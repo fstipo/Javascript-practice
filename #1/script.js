@@ -1,32 +1,20 @@
 'use strict';
 
-const player = {
-  speed: 10,
-  x: 692,
-  y: 498,
-  el: document.querySelector('.btn'),
+const numbers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19];
+
+console.log(numbers.includes(1));
+console.log(numbers.includes(2));
+console.log(numbers.includes(13));
+console.log(numbers.includes(21));
+
+const isIncluded = (arr) => {
+  let temp = arr ? 'Yes' : 'No';
+  console.log(temp);
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-  console.log('Start');
-});
-
-document.addEventListener('keydown', (e) => {
-  console.log(player.el.offsetLeft);
-  console.log(player.el.offsetTop);
-  if (e.key === 'ArrowUp') {
-    player.y -= player.speed;
-  }
-  if (e.key === 'ArrowDown') {
-    player.y += player.speed;
-  }
-  if (e.key === 'ArrowLeft') {
-    player.x -= player.speed;
-  }
-  if (e.key === 'ArrowRight') {
-    player.x += player.speed;
-  }
-  player.el.style.position = 'absolute';
-  player.el.style.left = player.x + 'px';
-  player.el.style.top = player.y + 'px';
-});
+isIncluded(numbers.includes(2));
+isIncluded(numbers.includes(12));
+isIncluded(numbers.includes(22));
+isIncluded(numbers.includes(11));
+isIncluded(numbers.includes(1));
+isIncluded(numbers.includes(3));
