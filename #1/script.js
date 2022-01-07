@@ -21,8 +21,13 @@ for (let i = 0; i < 10; i++) {
   divEl.innerText = randomGreeting(msg);
   divEl.style.fontSize = '24px';
   divEl.style.padding = '10px';
-  divEl.style.backgroundColor = `rgb(${randomNum(256)},${randomNum(
-    256
-  )},${randomNum(256)})`;
+  // Color with RGB
+  // divEl.style.backgroundColor = `rgb(${randomNum(256)},${randomNum(
+  //   256
+  // )},${randomNum(256)})`;
+
+  // Color with hex
+  const hexColor = `#${Math.random().toString(16).slice(-6)}`;
+  divEl.style.backgroundColor = hexColor;
   document.body.appendChild(divEl);
 }
