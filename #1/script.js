@@ -31,3 +31,7 @@ for (let i = 0; i < 10; i++) {
   divEl.style.backgroundColor = hexColor;
   document.body.appendChild(divEl);
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('All elements are loaded');
+});
