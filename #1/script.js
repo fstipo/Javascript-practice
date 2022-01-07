@@ -1,20 +1,14 @@
 'use strict';
 
-const numbers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19];
+const excluded = [1, 3, 5, 7, 9, 10, 11, 13, 15, 16, 17, 18, 19];
 
-console.log(numbers.includes(1));
-console.log(numbers.includes(2));
-console.log(numbers.includes(13));
-console.log(numbers.includes(21));
-
-const isIncluded = (arr) => {
-  let temp = arr ? 'Yes' : 'No';
-  console.log(temp);
+const randomNumber = (min, max) => {
+  min = Math.floor(min);
+  max = Math.ceil(max);
+  let num = Math.floor(Math.random() * (max - min)) + min;
+  return excluded.includes(num) ? randomNumber(min, max) : num;
 };
 
-isIncluded(numbers.includes(2));
-isIncluded(numbers.includes(12));
-isIncluded(numbers.includes(22));
-isIncluded(numbers.includes(11));
-isIncluded(numbers.includes(1));
-isIncluded(numbers.includes(3));
+for (let i = 0; i < 10; i++) {
+  console.log(randomNumber(10, 21));
+}
