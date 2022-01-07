@@ -1,37 +1,44 @@
 'use strict';
 
-const msg = [
-  'Hello',
-  'Hi!',
-  'Good Evening',
-  'Good afternoon',
-  'Good Bye',
-  'RIP baby',
-  '💥🎃🏀🌝',
-];
-
-const randomGreeting = (greetings) => {
-  return greetings[Math.floor(Math.random() * greetings.length)];
+const player = {
+  speed: 50,
+  x: 400,
+  y: 300,
 };
 
-const randomNum = (num) => Math.floor(Math.random() * num);
+const build = () => {
+  player.el = document.createElement('button');
+  player.el.innerText = player.y;
+  player.el.classList.add('btn');
+  player.el.style.position = 'absolute';
+  document.body.appendChild(player.el);
+};
+window.addEventListener('DOMContentLoaded', build);
+document.addEventListener('keydown', (e) => {
+  console.log(e.key);
+  if (e.key === 'ArrowUp') {
+    player.y -= player.speed;
+    player.el.innerText = player.y;
+    player.el.style.backgroundColor = 'gray';
+  }
+  if (e.key === 'ArrowDown') {
+    player.y += player.speed;
+    player.el.innerText = player.y;
+    player.el.style.backgroundColor = 'purple';
+  }
+  if (e.key === 'ArrowLeft') {
+    player.x -= player.speed;
+    player.el.innerText = player.x;
+    player.el.style.backgroundColor = 'red';
+  }
+  if (e.key === 'ArrowRight') {
+    player.x += player.speed;
+    player.el.innerText = player.x;
+    player.el.style.backgroundColor = 'green';
+  }
 
-for (let i = 0; i < 10; i++) {
-  let divEl = document.createElement('div');
-  divEl.innerText = randomGreeting(msg);
-  divEl.style.fontSize = '24px';
-  divEl.style.padding = '10px';
-  // Color with RGB
-  // divEl.style.backgroundColor = `rgb(${randomNum(256)},${randomNum(
-  //   256
-  // )},${randomNum(256)})`;
+  player.el.style.top = player.y + 'px';
+  player.el.style.left = player.x + 'px';
 
-  // Color with hex
-  const hexColor = `#${Math.random().toString(16).slice(-6)}`;
-  divEl.style.backgroundColor = hexColor;
-  document.body.appendChild(divEl);
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  console.log('All elements are loaded');
+  console.dir(player.el);
 });
