@@ -1,30 +1,38 @@
 'use strict';
 
-const greetings = ['Hello', 'Bye Bye', 'Stop', 'Good Evening', '🚀🔴', '🎃😬'];
-
-const randomGreeting = (arr) => {
-  return arr[Math.floor(Math.random() * arr.length)];
+const player = {
+  speed: 50,
+  x: 50,
+  y: 50,
 };
 
-const randomNumber = (num) => Math.floor(Math.random() * num);
+const move = (e) => {
+  if (e.key === 'ArrowUp') {
+    player.y -= player.speed;
+    player.el.innerHTML = `x: ${player.x} <br> y: ${player.y}`;
+  }
+  if (e.key === 'ArrowDown') {
+    player.y += player.speed;
+    player.el.innerHTML = `x: ${player.x} <br> y: ${player.y}`;
+  }
 
-for (let i = 0; i <= 10; i++) {
-  let divEl = document.createElement('div');
-  divEl.innerText = randomGreeting(greetings);
-  divEl.style.fontSize = '24px';
-  divEl.style.padding = '14px';
-  divEl.style.width = '170px';
-  // divEl.style.backgroundColor = `rgb(${randomNumber(256)},${randomNumber(
-  //   256
-  // )},${randomNumber(256)})`;
-  divEl.style.backgroundColor = '#' + Math.random().toString(16).slice(-6);
-  document.body.appendChild(divEl);
-  console.log(randomNumber(10));
-}
+  if (e.key === 'ArrowLeft') {
+    player.x -= player.speed;
+    player.el.innerHTML = `x: ${player.x} <br> y: ${player.y}`;
+  }
+  if (e.key === 'ArrowRight') {
+    player.x += player.speed;
+    player.el.innerHTML = `x: ${player.x} <br> y: ${player.y}`;
+  }
+  player.el.style.position = 'absolute';
+  player.el.style.left = player.x + 'px';
+  player.el.style.top = player.y + 'px';
+};
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('Document is loaded 💥');
-});
-window.addEventListener('DOMContentLoaded', () => {
-  console.log('Window is loaded 🚀');
+  player.el = document.createElement('div');
+  player.el.innerText = 'X';
+  player.el.classList.add('btn');
+  document.body.appendChild(player.el);
+  document.addEventListener('keydown', move);
 });
