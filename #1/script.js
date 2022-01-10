@@ -1,38 +1,27 @@
 'use strict';
+const d = new Date();
+console.log(d.getTime());
+console.log(d);
+console.log(d.getDate());
+console.log(d.getMonth());
+console.log(d.getFullYear());
+console.log(d.getHours());
+console.log(d.getMinutes());
+console.log(d.getSeconds());
 
-const player = {
-  speed: 50,
-  x: 50,
-  y: 50,
-};
+const today = Date.now();
+console.log(today);
 
-const move = (e) => {
-  if (e.key === 'ArrowUp') {
-    player.y -= player.speed;
-    player.el.innerHTML = `x: ${player.x} <br> y: ${player.y}`;
-  }
-  if (e.key === 'ArrowDown') {
-    player.y += player.speed;
-    player.el.innerHTML = `x: ${player.x} <br> y: ${player.y}`;
-  }
+const myBirthday = new Date('1977-11-30');
+console.log(myBirthday);
 
-  if (e.key === 'ArrowLeft') {
-    player.x -= player.speed;
-    player.el.innerHTML = `x: ${player.x} <br> y: ${player.y}`;
-  }
-  if (e.key === 'ArrowRight') {
-    player.x += player.speed;
-    player.el.innerHTML = `x: ${player.x} <br> y: ${player.y}`;
-  }
-  player.el.style.position = 'absolute';
-  player.el.style.left = player.x + 'px';
-  player.el.style.top = player.y + 'px';
-};
+const sum = today - myBirthday;
+let milSeconds = sum / 1000 / 60 / 60 / 24 / 365;
 
-document.addEventListener('DOMContentLoaded', () => {
-  player.el = document.createElement('div');
-  player.el.innerText = 'X';
-  player.el.classList.add('btn');
-  document.body.appendChild(player.el);
-  document.addEventListener('keydown', move);
-});
+console.log(milSeconds);
+let yearsOld = parseInt(sum / 1000 / 60 / 60 / 24 / 365);
+console.log('Years:' + yearsOld);
+const months = (milSeconds - 44) * 12;
+console.log('months:' + Math.floor(months));
+const days = (months - 1) * 24;
+console.log('days:' + parseInt(days));

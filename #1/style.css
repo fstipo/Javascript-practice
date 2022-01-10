@@ -43,6 +43,7 @@ span {
   display: block;
   padding: 12px 24px;
   width: 200px;
+  background-image: linear-gradient();
   border-radius: 5px;
   background-color: brown;
   border: 0;
