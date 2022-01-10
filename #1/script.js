@@ -19,4 +19,12 @@ for (let i = 0; i <= 10; i++) {
   // )},${randomNumber(256)})`;
   divEl.style.backgroundColor = '#' + Math.random().toString(16).slice(-6);
   document.body.appendChild(divEl);
+  console.log(randomNumber(10));
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('Document is loaded 💥');
+});
+window.addEventListener('DOMContentLoaded', () => {
+  console.log('Window is loaded 🚀');
+});
