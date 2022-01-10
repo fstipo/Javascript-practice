@@ -13,13 +13,10 @@ for (let i = 0; i <= 10; i++) {
   divEl.innerText = randomGreeting(greetings);
   divEl.style.fontSize = '24px';
   divEl.style.padding = '14px';
-  divEl.style.backgroundColor = `rgb(${randomNumber(256)},${randomNumber(
-    256
-  )},${randomNumber(256)})`;
+  divEl.style.width = '170px';
+  // divEl.style.backgroundColor = `rgb(${randomNumber(256)},${randomNumber(
+  //   256
+  // )},${randomNumber(256)})`;
+  divEl.style.backgroundColor = '#' + Math.random().toString(16).slice(-6);
   document.body.appendChild(divEl);
-  console.log(
-    `rgb(${randomNumber(256)},rgb(${randomNumber(256)},rgb(${randomNumber(
-      256
-    )})`
-  );
 }
