@@ -2,30 +2,20 @@
 
 // Local Storage
 
-const myObj = {
-  firstName: 'Jim',
-  lastName: 'Smith',
-};
+const btn = document.querySelector('.btn');
+let rect = btn.getBoundingClientRect();
 
-myObj;
-
-let myStr = JSON.stringify(myObj);
-
-if (localStorage.getItem('new')) {
-  let cnt = localStorage.getItem('new');
-  cnt++;
-  localStorage.setItem('new', cnt);
-} else {
-  localStorage.setItem('new', 1);
+for (let key in rect) {
+  console.log(key, rect[key]);
 }
 
-console.log(localStorage.getItem('new'));
-localStorage.setItem('obj', myStr);
+const move = (e) => {
+  console.log(e.key);
+  if (e.key === 'ArrowDown') {
+    rect.y -= 5;
+    btn.style.top = rect.y + 'px';
+    console.log(rect.y);
+  }
+};
 
-const btn = document.querySelector('.btn');
-btn.addEventListener('click', () => {
-  localStorage.removeItem('new');
-  let temp = localStorage.getItem('obj');
-  const newObj = JSON.parse(temp);
-  console.log(newObj);
-});
+document.addEventListener('keydown', move);
