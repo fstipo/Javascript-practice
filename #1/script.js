@@ -2,30 +2,30 @@
 
 // Local Storage
 
-if (localStorage.getItem('num')) {
-  let cnt = localStorage.getItem('num');
-  cnt = Number(cnt);
+const myObj = {
+  firstName: 'Jim',
+  lastName: 'Smith',
+};
+
+myObj;
+
+let myStr = JSON.stringify(myObj);
+
+if (localStorage.getItem('new')) {
+  let cnt = localStorage.getItem('new');
   cnt++;
-  console.log(cnt);
-  localStorage.setItem('num', cnt);
+  localStorage.setItem('new', cnt);
 } else {
-  localStorage.setItem('num', '1');
+  localStorage.setItem('new', 1);
 }
 
-console.log(localStorage.getItem('num'));
+console.log(localStorage.getItem('new'));
+localStorage.setItem('obj', myStr);
 
 const btn = document.querySelector('.btn');
 btn.addEventListener('click', () => {
-  localStorage.clear();
+  localStorage.removeItem('new');
+  let temp = localStorage.getItem('obj');
+  const newObj = JSON.parse(temp);
+  console.log(newObj);
 });
-
-const myObject = { name: 'Franko', lastName: 'Stipanov' };
-const myString = JSON.stringify(myObject);
-
-localStorage.setItem('my', myString);
-
-const newString = localStorage.getItem('my');
-const newObject = JSON.parse(newString);
-
-console.log(newString);
-console.log(newObject.lastName);
