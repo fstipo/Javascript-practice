@@ -37,6 +37,7 @@ div {
 }
 
 span {
+  position: absolute;
   cursor: pointer;
 }
 
@@ -47,4 +48,5 @@ span {
   left: 55px;
   top: 74px;
   background-color: blueviolet;
+  border: none;
 }

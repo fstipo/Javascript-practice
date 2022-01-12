@@ -1,21 +1,33 @@
 'use strict';
 
-// Local Storage
+// getBoundingClientRect
 
 const btn = document.querySelector('.btn');
-let rect = btn.getBoundingClientRect();
-
-for (let key in rect) {
-  console.log(key, rect[key]);
-}
+btn.getElementsByClassName.position = 'absolute';
+const elPosition = btn.getBoundingClientRect();
+let speed = 1;
 
 const move = (e) => {
-  console.log(e.key);
-  if (e.key === 'ArrowDown') {
-    rect.y -= 5;
-    btn.style.top = rect.y + 'px';
-    console.log(rect.y);
+  if (e.key === 'ArrowUp') {
+    elPosition.y -= speed;
   }
+  if (e.key === 'ArrowDown') {
+    elPosition.y += speed;
+  }
+  if (e.key === 'ArrowLeft') {
+    elPosition.x -= speed;
+  }
+  if (e.key === 'ArrowRight') {
+    elPosition.x += speed;
+  }
+  btn.innerHTML = `x:${elPosition.x} <br> y:${elPosition.y}`;
+  btn.style.left = elPosition.x + 'px';
+  btn.style.top = elPosition.y + 'px';
 };
+
+// Object properties
+for (let index in elPosition) {
+  console.log(index, elPosition[index]);
+}
 
 document.addEventListener('keydown', move);
