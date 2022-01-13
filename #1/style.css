@@ -7,46 +7,7 @@ body {
   position: relative;
   margin: 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* overflow: hidden; */
   height: 100vh;
-}
-div {
-  text-align: center;
-  cursor: pointer;
-}
-
-.img-box {
-  text-align: center;
-  margin: 50px;
-}
-
-.first {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.strike {
-  text-decoration: line-through;
-  background-color: rgb(230, 230, 230);
-  color: red;
-}
-
-span {
-  position: absolute;
-  cursor: pointer;
-}
-
-.btn {
-  position: absolute;
-  width: 100px;
-  height: 123px;
-  left: 55px;
-  top: 74px;
-  background-color: blueviolet;
-  border: none;
 }
