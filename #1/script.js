@@ -1,11 +1,9 @@
 'use strict';
-
-// getBoundingClientRect
-
-// const BandList =
+// Random Number Generator =
 
 const inputEl = document.querySelector('input');
 const btn = document.querySelector('.btn');
+const msg = document.querySelector('.msg');
 
 const randomNumber = (min, max) => {
   min = Math.floor(min);
@@ -15,5 +13,5 @@ const randomNumber = (min, max) => {
 };
 
 for (let i = 0; i < 2; i++) {
-  console.log(randomNumber(1, 22));
+  msg.innerHTML = randomNumber(1, 22);
 }
